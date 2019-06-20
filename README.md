@@ -2,7 +2,8 @@
 
 ## Business Understanding
 The hardest part about being a MLB hitter is well.. hitting. Professional pitchers make millions of dollars by confusing opposing hitters. As a college baseball player, I struggled with understanding how pitchers were going to attack my weaknesses. This product can help athletes train and find patterns in their game that were before unknown and give them confidence in their approach at the plate. This model may also be helpful for pitchers by understanding what patterns pitchers typically follow they would be able to avoid these tendencies. 
-Data Understanding
+
+## Data Understanding
 The data will come from all MLB games played in the 2018 season. This will give me a very diverse and large pitch dataset(around 2 million pitches). The data will include all information about each individual pitch per game(including: pitch type, base runners, pitcher name, etc..)
 
 ## Data Preparation
