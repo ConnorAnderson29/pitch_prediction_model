@@ -1,13 +1,13 @@
 # Next Pitch Prediction Model
 
 ## Business Understanding
-The hardest part about being a MLB hitter is well.. hitting. Professional pitchers make millions of dollars by confusing opposing hitters. As a college baseball player, I struggled with understanding how pitchers were going to attack my weaknesses. This product can help athletes train and find patterns in their game that were before unknown and give them confidence in their approach at the plate. This model may also be helpful for pitchers by understanding what patterns pitchers typically follow they would be able to avoid these tendencies. 
+The hardest part about being a MLB hitter is mastering the mental approach to hitting. Organizations pay pitchers millions of dollars to confuse opposing hitters. As a college baseball player, I always struggled with understanding how pitchers would attack my weaknesses at the plate. This product will help hitters better understand the patterns pitchers follow and will give them more confidence in their approach at the plate. Hitters aren't the only atheletes that will benefit from this model. Pitchers are notorious for following patterns and becoming predictable. By using this model, they can identify their tendencies and learn how to avoid repeat mistakes. 
 
 ## Data Understanding
-The data will come from all MLB games played in the 2018 season. This will give me a very diverse and large pitch dataset(around 2 million pitches). The data will include all information about each individual pitch per game(including: pitch type, base runners, pitcher name, etc..)
+The data will come from all MLB games played in the 2018 season. This is a large and very diverse dataset(around 2 million pitches). The data will include all information about each individual pitch per game(including: pitch type, base runners, pitcher name, etc..)
 
 ## Data Preparation
-Data is plentiful and fairly easy to retrieve so if more is needed to avoid overfitting then it will be possible to get. After my data is collected, using domain knowledge I will engineer several features that I believe are important(previous pitches, batter attributes, pitcher attributes...etc). Feature engineering will have a huge effect on the model. I am looking to paint as clear of a picture for the model as I can. 
+Data is plentiful and fairly easy to retrieve so if more is needed to avoid overfitting then it will be possible to get. After my data is collected, using domain knowledge I will engineer several features that I believe are important(previous pitches, batter attributes, pitcher attributes...etc). Feature engineering will have a huge effect on the model. My goal is to create as close to a replica of the game situation as I can in the data. 
 
 ## Modeling
 I’m going to train test split 80/20 and then keep a reserve validation set of 20%. This way I can really test the accuracy of the model. Modeling will either utilize a neural network or classification models.First, I will use the data with XGBoost/Gradient Boosted trees. If those models are not successful, then the next step may be to try and train on a neural network just to see if it can produce some deep features. This may take time so I may use a cloud computing service to do the job quickly. 
