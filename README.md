@@ -1,7 +1,7 @@
 # Next Pitch Prediction Model
 
 ## Business Understanding
-Mastering the mental apprroach is one of the hardest parts about being an elite professional hitter. Major League Bseball organizations pay pitchers millions of dollars to confuse opposing hitters. As a college baseball player, I always struggled with understanding how pitchers would attack my weaknesses at the plate. This product will help hitters better understand the patterns pitchers follow and will give them more confidence in their approach at the plate. Hitters aren't the only atheletes that will benefit from this model. Pitchers are notorious for following patterns and becoming predictable. By using this model, they can identify their tendencies and learn how to avoid repeat mistakes. 
+Mastering the mental apprroach is one of the hardest parts about being an elite professional hitter. Major League Baseball organizations pay pitchers millions of dollars to confuse opposing hitters. As a college baseball player, I always struggled with understanding how pitchers would attack my weaknesses at the plate. This product will help hitters better understand the patterns pitchers follow and will give them more confidence in their approach at the plate. Hitters aren't the only atheletes that will benefit from this model. Pitchers are notorious for following patterns and becoming predictable. By using this model, they can identify their tendencies and learn how to avoid repeat mistakes. 
 
 ## Data Understanding
 The data will come from all MLB games played in the 2018 season. This is a large and very diverse dataset(around 2 million pitches). The data will include all information about each individual pitch per game(including: pitch type, base runners, pitcher name, etc..)
