@@ -57,3 +57,22 @@ def run_classifier_models(classifiers, X_train, X_test, y_train, y_test):
         pitch_functions.calc_acc_and_f1_score(y_test, clf1.predict(X_test))
         print('\n')
 
+def scrape_espn_player_data(url, final_df):
+
+    '''This functions scrapes ESPN leaderboard data and returns a Pandas Data Frame'''
+
+    for i in range(1,1000, 40):
+        url ='http://www.espn.com/mlb/stats/batting/_/year/2018/count/{}/qualified/false'.format(i)
+        page = requests.get(url)
+        soup = BeautifulSoup(page.text, 'html.parser')
+
+        players = soup.find_all('tr', attrs={'class':re.compile('row player-10-')})
+        for player in players:
+            # Get Stat for each player
+            stats = [stat.get_text() for stat in player.find_all('td')]
+            # Create temp dataframe to add later
+            temp_df = pd.DataFrame(stats).transpose()
+            temp_df.columns = columns
+            # Add Data to final_df
+            final_df = pd.concat([final_df, temp_df], ignore_index=True)
+    return final_df
