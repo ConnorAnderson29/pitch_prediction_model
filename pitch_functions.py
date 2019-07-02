@@ -1,6 +1,6 @@
 from sklearn.metrics import f1_score, accuracy_score, roc_auc_score
 from sklearn.preprocessing import LabelBinarizer
-
+import library 
 
 
 
@@ -43,6 +43,7 @@ def calc_acc_and_f1_score(true, preds, model_name='Model Name'):
 def run_classifier_models(classifiers, X_train, X_test, y_train, y_test):
     for classifier in classifiers:
         ''' Intialize Pipeline, Fit Pipeline to Train Set''' 
+        """URL MUST BE STRING"""
         clf1 = Pipeline(steps=[('preprocessor', preprocessor),
                               ('classifier', classifier)])
         clf1.fit(X_train, y_train)
@@ -62,7 +63,7 @@ def scrape_espn_player_data(url, final_df):
     '''This functions scrapes ESPN leaderboard data and returns a Pandas Data Frame'''
 
     for i in range(1,1000, 40):
-        url ='http://www.espn.com/mlb/stats/batting/_/year/2018/count/{}/qualified/false'.format(i)
+        url =url.format(i)
         page = requests.get(url)
         soup = BeautifulSoup(page.text, 'html.parser')
 

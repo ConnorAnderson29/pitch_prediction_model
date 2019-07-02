@@ -1,5 +1,5 @@
 # Public Data
 
-This repository will have data small enough to be on GitHub.
+This folder holds data that is small enough to be stored on Github. The larger data files used in this notebook are hidden in a ```raw_data``` folder. 
 
 
