@@ -1,0 +1,201 @@
+about.atBatIndex,about.halfInning,about.inning,count.balls,count.strikes,details.call.code,details.call.description,details.description,matchup.batSide.code,matchup.batter.fullName,matchup.pitchHand.code,matchup.pitcher.fullName,matchup.pitcher.id,matchup.splits.menOnBase,pitchData.nastyFactor,pitchData.zone,pitchNumber,previous_pitch_code,pitch_type,prior_pitch_type
+0,top,1,0.0,0.0,X,Hit Into Play - Out(s),"In play, out(s)",R,JaCoby Jones,R,Dylan Cease,656302,Empty,,,1.0,,Fastball,
+1,top,1,1.0,0.0,B,Ball - Called,Ball,L,Christin Stewart,R,Dylan Cease,656302,Empty,,,1.0,,Fastball,
+1,top,1,2.0,0.0,B,Ball - Called,Ball,L,Christin Stewart,R,Dylan Cease,656302,Empty,,,2.0,FF,Fastball,Fastball
+1,top,1,2.0,1.0,S,Strike - Swinging,Called Strike,L,Christin Stewart,R,Dylan Cease,656302,Empty,,,3.0,FF,Fastball,Fastball
+1,top,1,2.0,2.0,S,Strike - Swinging,Foul,L,Christin Stewart,R,Dylan Cease,656302,Empty,,,4.0,FF,Fastball,Fastball
+1,top,1,2.0,2.0,X,Hit Into Play - Out(s),"In play, out(s)",L,Christin Stewart,R,Dylan Cease,656302,Empty,,,5.0,FF,Fastball,Fastball
+2,top,1,0.0,1.0,S,Strike - Swinging,Called Strike,R,Nicholas Castellanos,R,Dylan Cease,656302,Men_On,,,1.0,,Breaking_Ball,
+2,top,1,1.0,1.0,B,Ball - Called,Ball,R,Nicholas Castellanos,R,Dylan Cease,656302,Men_On,,,2.0,SL,Fastball,Breaking_Ball
+2,top,1,1.0,1.0,,,On-field Delay.,R,Nicholas Castellanos,R,Dylan Cease,656302,Men_On,,,,FF,,Fastball
+2,top,1,1.0,2.0,S,Strike - Swinging,Foul,R,Nicholas Castellanos,R,Dylan Cease,656302,Men_On,,,3.0,,Fastball,
+2,top,1,2.0,2.0,B,Ball - Called,Ball,R,Nicholas Castellanos,R,Dylan Cease,656302,Men_On,,,4.0,FF,Fastball,Fastball
+2,top,1,3.0,2.0,B,Ball - Called,Ball,R,Nicholas Castellanos,R,Dylan Cease,656302,Men_On,,,5.0,FF,Breaking_Ball,Fastball
+2,top,1,3.0,2.0,S,Strike - Swinging,Foul,R,Nicholas Castellanos,R,Dylan Cease,656302,Men_On,,,6.0,SL,Breaking_Ball,Breaking_Ball
+2,top,1,4.0,2.0,B,Ball - Called,Ball,R,Nicholas Castellanos,R,Dylan Cease,656302,Men_On,,,7.0,SL,Fastball,Breaking_Ball
+3,top,1,0.0,1.0,S,Strike - Swinging,Called Strike,R,Brandon Dixon,R,Dylan Cease,656302,RISP,,,1.0,,Fastball,
+3,top,1,1.0,1.0,B,Ball - Called,Ball,R,Brandon Dixon,R,Dylan Cease,656302,RISP,,,2.0,FF,Fastball,Fastball
+3,top,1,2.0,1.0,B,Ball - Called,Ball,R,Brandon Dixon,R,Dylan Cease,656302,RISP,,,3.0,FF,Fastball,Fastball
+3,top,1,,,,,Pickoff Attempt 1B,R,Brandon Dixon,R,Dylan Cease,656302,RISP,,,,FF,,Fastball
+3,top,1,3.0,1.0,B,Ball - Called,Ball,R,Brandon Dixon,R,Dylan Cease,656302,RISP,,,4.0,,Fastball,
+3,top,1,4.0,1.0,B,Ball - Called,Ball,R,Brandon Dixon,R,Dylan Cease,656302,RISP,,,5.0,FF,Fastball,Fastball
+4,top,1,0.0,1.0,S,Strike - Swinging,Called Strike,L,Jeimer Candelario,R,Dylan Cease,656302,Loaded,,,1.0,,Breaking_Ball,
+4,top,1,0.0,2.0,S,Strike - Swinging,Called Strike,L,Jeimer Candelario,R,Dylan Cease,656302,Loaded,,,2.0,SL,Breaking_Ball,Breaking_Ball
+4,top,1,1.0,2.0,B,Ball - Called,Ball,L,Jeimer Candelario,R,Dylan Cease,656302,Loaded,,,3.0,SL,Fastball,Breaking_Ball
+4,top,1,1.0,2.0,S,Strike - Swinging,Foul,L,Jeimer Candelario,R,Dylan Cease,656302,Loaded,,,4.0,FF,Breaking_Ball,Fastball
+4,top,1,2.0,2.0,B,Ball - Called,Hit By Pitch,L,Jeimer Candelario,R,Dylan Cease,656302,Loaded,,,5.0,SL,Fastball,Breaking_Ball
+5,top,1,0.0,0.0,,,Injury Delay.,L,Harold Castro,R,Dylan Cease,656302,RISP,,,,,,
+5,top,1,0.0,1.0,S,Strike - Swinging,Called Strike,L,Harold Castro,R,Dylan Cease,656302,RISP,,,1.0,,Breaking_Ball,
+5,top,1,0.0,1.0,X,Hit Into Play - Out(s),"In play, run(s)",L,Harold Castro,R,Dylan Cease,656302,RISP,,,2.0,SL,Breaking_Ball,Breaking_Ball
+6,top,1,1.0,0.0,B,Ball - Called,Ball,L,Niko Goodrum,R,Dylan Cease,656302,Loaded,,,1.0,,Fastball,
+6,top,1,1.0,1.0,S,Strike - Swinging,Called Strike,L,Niko Goodrum,R,Dylan Cease,656302,Loaded,,,2.0,FF,Breaking_Ball,Fastball
+6,top,1,1.0,2.0,S,Strike - Swinging,Swinging Strike,L,Niko Goodrum,R,Dylan Cease,656302,Loaded,,,3.0,SL,Fastball,Breaking_Ball
+6,top,1,2.0,2.0,B,Ball - Called,Ball,L,Niko Goodrum,R,Dylan Cease,656302,Loaded,,,4.0,FF,Fastball,Fastball
+6,top,1,3.0,2.0,B,Ball - Called,Ball,L,Niko Goodrum,R,Dylan Cease,656302,Loaded,,,5.0,FF,Fastball,Fastball
+6,top,1,4.0,2.0,B,Ball - Called,Ball,L,Niko Goodrum,R,Dylan Cease,656302,Loaded,,,6.0,FF,Breaking_Ball,Fastball
+7,top,1,0.0,0.0,,,Mound Visit.,R,John Hicks,R,Dylan Cease,656302,Empty,,,,,,
+7,top,1,0.0,1.0,S,Strike - Swinging,Called Strike,R,John Hicks,R,Dylan Cease,656302,Empty,,,1.0,,Fastball,
+7,top,1,0.0,1.0,X,Hit Into Play - Out(s),"In play, out(s)",R,John Hicks,R,Dylan Cease,656302,Empty,,,2.0,FF,Breaking_Ball,Fastball
+8,bottom,1,1.0,0.0,B,Ball - Called,Ball,R,Leury Garcia,L,Daniel Norris,596057,Empty,,,1.0,,Fastball,
+8,bottom,1,1.0,1.0,S,Strike - Swinging,Called Strike,R,Leury Garcia,L,Daniel Norris,596057,Empty,,,2.0,FF,Fastball,Fastball
+8,bottom,1,2.0,1.0,B,Ball - Called,Ball,R,Leury Garcia,L,Daniel Norris,596057,Empty,,,3.0,FF,Fastball,Fastball
+8,bottom,1,2.0,1.0,X,Hit Into Play - Out(s),"In play, out(s)",R,Leury Garcia,L,Daniel Norris,596057,Empty,,,4.0,FF,Fastball,Fastball
+9,bottom,1,0.0,1.0,S,Strike - Swinging,Called Strike,R,Yoan Moncada,L,Daniel Norris,596057,Empty,,,1.0,,Fastball,
+9,bottom,1,0.0,2.0,S,Strike - Swinging,Foul,R,Yoan Moncada,L,Daniel Norris,596057,Empty,,,2.0,FF,Breaking_Ball,Fastball
+9,bottom,1,1.0,2.0,B,Ball - Called,Ball,R,Yoan Moncada,L,Daniel Norris,596057,Empty,,,3.0,CU,Changeup,Breaking_Ball
+9,bottom,1,1.0,3.0,S,Strike - Swinging,Swinging Strike,R,Yoan Moncada,L,Daniel Norris,596057,Empty,,,4.0,CH,Breaking_Ball,Changeup
+10,bottom,1,0.0,1.0,S,Strike - Swinging,Called Strike,R,Jose Abreu,L,Daniel Norris,596057,RISP,,,1.0,,Fastball,
+10,bottom,1,1.0,1.0,B,Ball - Called,Ball,R,Jose Abreu,L,Daniel Norris,596057,RISP,,,2.0,FF,Changeup,Fastball
+10,bottom,1,1.0,2.0,S,Strike - Swinging,Foul,R,Jose Abreu,L,Daniel Norris,596057,RISP,,,3.0,CH,Changeup,Changeup
+10,bottom,1,2.0,2.0,B,Ball - Called,Ball,R,Jose Abreu,L,Daniel Norris,596057,RISP,,,4.0,CH,Fastball,Changeup
+10,bottom,1,3.0,2.0,B,Ball - Called,Ball,R,Jose Abreu,L,Daniel Norris,596057,RISP,,,5.0,FF,Breaking_Ball,Fastball
+10,bottom,1,3.0,2.0,S,Strike - Swinging,Foul,R,Jose Abreu,L,Daniel Norris,596057,RISP,,,6.0,SL,Fastball,Breaking_Ball
+10,bottom,1,3.0,2.0,X,Hit Into Play - Out(s),"In play, no out",R,Jose Abreu,L,Daniel Norris,596057,RISP,,,7.0,FF,Fastball,Fastball
+11,bottom,1,0.0,1.0,S,Strike - Swinging,Called Strike,R,James McCann,L,Daniel Norris,596057,RISP,,,1.0,,Fastball,
+11,bottom,1,0.0,1.0,X,Hit Into Play - Out(s),"In play, run(s)",R,James McCann,L,Daniel Norris,596057,RISP,,,2.0,FF,Changeup,Fastball
+12,bottom,1,0.0,1.0,S,Strike - Swinging,Swinging Strike (Blocked),L,Jon Jay,L,Daniel Norris,596057,Empty,,,1.0,,Breaking_Ball,
+12,bottom,1,1.0,1.0,B,Ball - Called,Ball In Dirt,L,Jon Jay,L,Daniel Norris,596057,Empty,,,2.0,CU,Breaking_Ball,Breaking_Ball
+12,bottom,1,2.0,1.0,B,Ball - Called,Ball,L,Jon Jay,L,Daniel Norris,596057,Empty,,,3.0,SL,Breaking_Ball,Breaking_Ball
+12,bottom,1,2.0,2.0,S,Strike - Swinging,Foul,L,Jon Jay,L,Daniel Norris,596057,Empty,,,4.0,CU,Fastball,Breaking_Ball
+12,bottom,1,3.0,2.0,B,Ball - Called,Ball In Dirt,L,Jon Jay,L,Daniel Norris,596057,Empty,,,5.0,FF,Breaking_Ball,Fastball
+12,bottom,1,3.0,2.0,X,Hit Into Play - Out(s),"In play, out(s)",L,Jon Jay,L,Daniel Norris,596057,Empty,,,6.0,SL,Breaking_Ball,Breaking_Ball
+13,top,2,1.0,0.0,B,Ball - Called,Ball,R,Jordy Mercer,R,Dylan Cease,656302,Empty,,,1.0,,Fastball,
+13,top,2,2.0,0.0,B,Ball - Called,Ball,R,Jordy Mercer,R,Dylan Cease,656302,Empty,,,2.0,FF,Fastball,Fastball
+13,top,2,2.0,0.0,X,Hit Into Play - Out(s),"In play, out(s)",R,Jordy Mercer,R,Dylan Cease,656302,Empty,,,3.0,FF,Fastball,Fastball
+14,top,2,1.0,0.0,B,Ball - Called,Ball,R,JaCoby Jones,R,Dylan Cease,656302,Empty,,,1.0,,Breaking_Ball,
+14,top,2,1.0,1.0,S,Strike - Swinging,Called Strike,R,JaCoby Jones,R,Dylan Cease,656302,Empty,,,2.0,SL,Breaking_Ball,Breaking_Ball
+14,top,2,1.0,2.0,S,Strike - Swinging,Called Strike,R,JaCoby Jones,R,Dylan Cease,656302,Empty,,,3.0,SL,Breaking_Ball,Breaking_Ball
+14,top,2,2.0,2.0,B,Ball - Called,Ball,R,JaCoby Jones,R,Dylan Cease,656302,Empty,,,4.0,SL,Fastball,Breaking_Ball
+14,top,2,2.0,3.0,S,Strike - Swinging,Swinging Strike (Blocked),R,JaCoby Jones,R,Dylan Cease,656302,Empty,,,5.0,FF,Breaking_Ball,Fastball
+15,top,2,0.0,1.0,S,Strike - Swinging,Called Strike,L,Christin Stewart,R,Dylan Cease,656302,Empty,,,1.0,,Fastball,
+15,top,2,0.0,2.0,S,Strike - Swinging,Swinging Strike,L,Christin Stewart,R,Dylan Cease,656302,Empty,,,2.0,FF,Fastball,Fastball
+15,top,2,1.0,2.0,B,Ball - Called,Ball,L,Christin Stewart,R,Dylan Cease,656302,Empty,,,3.0,FF,Breaking_Ball,Fastball
+15,top,2,1.0,3.0,S,Strike - Swinging,Called Strike,L,Christin Stewart,R,Dylan Cease,656302,Empty,,,4.0,SL,Changeup,Breaking_Ball
+16,bottom,2,0.0,1.0,S,Strike - Swinging,Foul,R,Eloy Jimenez,L,Daniel Norris,596057,Men_On,,,1.0,,Breaking_Ball,
+16,bottom,2,1.0,1.0,B,Ball - Called,Ball,R,Eloy Jimenez,L,Daniel Norris,596057,Men_On,,,2.0,CU,Breaking_Ball,Breaking_Ball
+16,bottom,2,1.0,1.0,X,Hit Into Play - Out(s),"In play, no out",R,Eloy Jimenez,L,Daniel Norris,596057,Men_On,,,3.0,CU,Fastball,Breaking_Ball
+17,bottom,2,0.0,1.0,S,Strike - Swinging,Called Strike,R,Jose Rondon,L,Daniel Norris,596057,Men_On,,,1.0,,Fastball,
+17,bottom,2,0.0,1.0,X,Hit Into Play - Out(s),"In play, out(s)",R,Jose Rondon,L,Daniel Norris,596057,Men_On,,,2.0,FF,Changeup,Fastball
+18,bottom,2,0.0,1.0,S,Strike - Swinging,Called Strike,R,Yolmer Sanchez,L,Daniel Norris,596057,Men_On,,,1.0,,Fastball,
+18,bottom,2,0.0,2.0,S,Strike - Swinging,Foul,R,Yolmer Sanchez,L,Daniel Norris,596057,Men_On,,,2.0,FF,Breaking_Ball,Fastball
+18,bottom,2,1.0,2.0,B,Ball - Called,Ball In Dirt,R,Yolmer Sanchez,L,Daniel Norris,596057,Men_On,,,3.0,CU,Breaking_Ball,Breaking_Ball
+18,bottom,2,,,,,Pickoff Attempt 1B,R,Yolmer Sanchez,L,Daniel Norris,596057,Men_On,,,,SL,,Breaking_Ball
+18,bottom,2,1.0,2.0,X,Hit Into Play - Out(s),"In play, out(s)",R,Yolmer Sanchez,L,Daniel Norris,596057,Men_On,,,4.0,,Changeup,
+19,bottom,2,0.0,1.0,S,Strike - Swinging,Called Strike,R,Ryan Cordell,L,Daniel Norris,596057,RISP,,,1.0,,Fastball,
+19,bottom,2,1.0,1.0,B,Ball - Called,Ball,R,Ryan Cordell,L,Daniel Norris,596057,RISP,,,2.0,FF,Breaking_Ball,Fastball
+19,bottom,2,1.0,2.0,S,Strike - Swinging,Called Strike,R,Ryan Cordell,L,Daniel Norris,596057,RISP,,,3.0,CU,Fastball,Breaking_Ball
+19,bottom,2,1.0,2.0,X,Hit Into Play - Out(s),"In play, no out",R,Ryan Cordell,L,Daniel Norris,596057,RISP,,,4.0,FF,Changeup,Fastball
+20,bottom,2,0.0,1.0,S,Strike - Swinging,Foul,R,Leury Garcia,L,Daniel Norris,596057,Empty,,,1.0,,Fastball,
+20,bottom,2,0.0,1.0,X,Hit Into Play - Out(s),"In play, run(s)",R,Leury Garcia,L,Daniel Norris,596057,Empty,,,2.0,FF,Fastball,Fastball
+21,top,3,1.0,0.0,B,Ball - Called,Ball,R,Nicholas Castellanos,R,Dylan Cease,656302,Men_On,,,1.0,,Fastball,
+21,top,3,1.0,1.0,S,Strike - Swinging,Foul,R,Nicholas Castellanos,R,Dylan Cease,656302,Men_On,,,2.0,FF,Fastball,Fastball
+21,top,3,2.0,1.0,B,Ball - Called,Ball,R,Nicholas Castellanos,R,Dylan Cease,656302,Men_On,,,3.0,FF,Fastball,Fastball
+21,top,3,3.0,1.0,B,Ball - Called,Ball,R,Nicholas Castellanos,R,Dylan Cease,656302,Men_On,,,4.0,FF,Fastball,Fastball
+21,top,3,3.0,1.0,X,Hit Into Play - Out(s),"In play, no out",R,Nicholas Castellanos,R,Dylan Cease,656302,Men_On,,,5.0,FF,Fastball,Fastball
+22,top,3,0.0,1.0,S,Strike - Swinging,Swinging Strike,R,Brandon Dixon,R,Dylan Cease,656302,Men_On,,,1.0,,Breaking_Ball,
+22,top,3,0.0,2.0,S,Strike - Swinging,Called Strike,R,Brandon Dixon,R,Dylan Cease,656302,Men_On,,,2.0,SL,Fastball,Breaking_Ball
+22,top,3,0.0,2.0,S,Strike - Swinging,Foul,R,Brandon Dixon,R,Dylan Cease,656302,Men_On,,,3.0,FF,Fastball,Fastball
+22,top,3,0.0,2.0,S,Strike - Swinging,Foul,R,Brandon Dixon,R,Dylan Cease,656302,Men_On,,,4.0,FF,Breaking_Ball,Fastball
+22,top,3,1.0,2.0,B,Ball - Called,Ball In Dirt,R,Brandon Dixon,R,Dylan Cease,656302,Men_On,,,5.0,SL,Breaking_Ball,Breaking_Ball
+22,top,3,1.0,2.0,X,Hit Into Play - Out(s),"In play, out(s)",R,Brandon Dixon,R,Dylan Cease,656302,Men_On,,,6.0,SL,Breaking_Ball,Breaking_Ball
+23,top,3,0.0,1.0,S,Strike - Swinging,Called Strike,L,Jeimer Candelario,R,Dylan Cease,656302,Men_On,,,1.0,,Fastball,
+23,top,3,1.0,1.0,B,Ball - Called,Ball,L,Jeimer Candelario,R,Dylan Cease,656302,Men_On,,,2.0,FF,Breaking_Ball,Fastball
+23,top,3,1.0,2.0,S,Strike - Swinging,Foul,L,Jeimer Candelario,R,Dylan Cease,656302,Men_On,,,3.0,CU,Fastball,Breaking_Ball
+23,top,3,2.0,2.0,B,Ball - Called,Ball,L,Jeimer Candelario,R,Dylan Cease,656302,Men_On,,,4.0,FF,Fastball,Fastball
+23,top,3,2.0,2.0,S,Strike - Swinging,Foul,L,Jeimer Candelario,R,Dylan Cease,656302,Men_On,,,5.0,FF,Breaking_Ball,Fastball
+23,top,3,2.0,2.0,X,Hit Into Play - Out(s),"In play, out(s)",L,Jeimer Candelario,R,Dylan Cease,656302,Men_On,,,6.0,SL,Breaking_Ball,Breaking_Ball
+24,top,3,0.0,0.0,X,Hit Into Play - Out(s),"In play, no out",L,Harold Castro,R,Dylan Cease,656302,RISP,,,1.0,,Fastball,
+25,top,3,1.0,0.0,B,Ball - Called,Ball,L,Niko Goodrum,R,Dylan Cease,656302,Empty,,,1.0,,Fastball,
+25,top,3,2.0,0.0,B,Ball - Called,Ball,L,Niko Goodrum,R,Dylan Cease,656302,Empty,,,2.0,FF,Fastball,Fastball
+25,top,3,2.0,1.0,S,Strike - Swinging,Called Strike,L,Niko Goodrum,R,Dylan Cease,656302,Empty,,,3.0,FF,Fastball,Fastball
+25,top,3,,,,,Pickoff Attempt 3B,L,Niko Goodrum,R,Dylan Cease,656302,Empty,,,,FF,,Fastball
+25,top,3,2.0,2.0,S,Strike - Swinging,Swinging Strike,L,Niko Goodrum,R,Dylan Cease,656302,Empty,,,4.0,,Breaking_Ball,
+25,top,3,3.0,2.0,B,Ball - Called,Ball,L,Niko Goodrum,R,Dylan Cease,656302,Empty,,,5.0,SL,Fastball,Breaking_Ball
+25,top,3,3.0,2.0,X,Hit Into Play - Out(s),"In play, out(s)",L,Niko Goodrum,R,Dylan Cease,656302,Empty,,,6.0,FF,Breaking_Ball,Fastball
+26,bottom,3,1.0,0.0,B,Ball - Called,Ball,R,Yoan Moncada,L,Daniel Norris,596057,Empty,,,1.0,,Fastball,
+26,bottom,3,1.0,1.0,S,Strike - Swinging,Called Strike,R,Yoan Moncada,L,Daniel Norris,596057,Empty,,,2.0,FF,Changeup,Fastball
+26,bottom,3,1.0,1.0,X,Hit Into Play - Out(s),"In play, out(s)",R,Yoan Moncada,L,Daniel Norris,596057,Empty,,,3.0,CH,Changeup,Changeup
+27,bottom,3,1.0,0.0,B,Ball - Called,Ball,R,Jose Abreu,L,Daniel Norris,596057,Men_On,,,1.0,,Breaking_Ball,
+27,bottom,3,1.0,1.0,S,Strike - Swinging,Called Strike,R,Jose Abreu,L,Daniel Norris,596057,Men_On,,,2.0,SL,Breaking_Ball,Breaking_Ball
+27,bottom,3,1.0,2.0,S,Strike - Swinging,Foul,R,Jose Abreu,L,Daniel Norris,596057,Men_On,,,3.0,SL,Breaking_Ball,Breaking_Ball
+27,bottom,3,1.0,2.0,S,Strike - Swinging,Foul,R,Jose Abreu,L,Daniel Norris,596057,Men_On,,,4.0,SL,Fastball,Breaking_Ball
+27,bottom,3,2.0,2.0,B,Ball - Called,Ball,R,Jose Abreu,L,Daniel Norris,596057,Men_On,,,5.0,FF,Breaking_Ball,Fastball
+27,bottom,3,2.0,2.0,X,Hit Into Play - Out(s),"In play, no out",R,Jose Abreu,L,Daniel Norris,596057,Men_On,,,6.0,SL,Changeup,Breaking_Ball
+28,bottom,3,1.0,0.0,B,Ball - Called,Ball,R,James McCann,L,Daniel Norris,596057,RISP,,,1.0,,Fastball,
+28,bottom,3,1.0,1.0,S,Strike - Swinging,Swinging Strike (Blocked),R,James McCann,L,Daniel Norris,596057,RISP,,,2.0,FF,Breaking_Ball,Fastball
+28,bottom,3,1.0,2.0,S,Strike - Swinging,Foul,R,James McCann,L,Daniel Norris,596057,RISP,,,3.0,CU,Breaking_Ball,Breaking_Ball
+28,bottom,3,1.0,2.0,S,Strike - Swinging,Foul,R,James McCann,L,Daniel Norris,596057,RISP,,,4.0,CU,Fastball,Breaking_Ball
+28,bottom,3,1.0,2.0,S,Strike - Swinging,Foul,R,James McCann,L,Daniel Norris,596057,RISP,,,5.0,FF,Breaking_Ball,Fastball
+28,bottom,3,2.0,2.0,B,Ball - Called,Ball,R,James McCann,L,Daniel Norris,596057,RISP,,,6.0,CU,Changeup,Breaking_Ball
+28,bottom,3,2.0,2.0,,,Wild pitch by pitcher Daniel Norris.   Jose Abreu to 2nd.  ,R,James McCann,L,Daniel Norris,596057,RISP,,,,CH,,Changeup
+28,bottom,3,3.0,2.0,B,Ball - Called,Ball In Dirt,R,James McCann,L,Daniel Norris,596057,RISP,,,7.0,,Breaking_Ball,
+28,bottom,3,3.0,2.0,S,Strike - Swinging,Foul,R,James McCann,L,Daniel Norris,596057,RISP,,,8.0,CU,Fastball,Breaking_Ball
+28,bottom,3,3.0,2.0,S,Strike - Swinging,Foul,R,James McCann,L,Daniel Norris,596057,RISP,,,9.0,FF,Breaking_Ball,Fastball
+28,bottom,3,4.0,2.0,B,Ball - Called,Ball,R,James McCann,L,Daniel Norris,596057,RISP,,,10.0,SL,Fastball,Breaking_Ball
+29,bottom,3,0.0,0.0,,,Mound Visit.,L,Jon Jay,L,Daniel Norris,596057,Empty,,,,,,
+29,bottom,3,1.0,0.0,B,Ball - Called,Ball,L,Jon Jay,L,Daniel Norris,596057,Empty,,,1.0,,Breaking_Ball,
+29,bottom,3,1.0,1.0,S,Strike - Swinging,Foul,L,Jon Jay,L,Daniel Norris,596057,Empty,,,2.0,SL,Fastball,Breaking_Ball
+29,bottom,3,2.0,1.0,B,Ball - Called,Ball In Dirt,L,Jon Jay,L,Daniel Norris,596057,Empty,,,3.0,FF,Breaking_Ball,Fastball
+29,bottom,3,2.0,2.0,S,Strike - Swinging,Foul,L,Jon Jay,L,Daniel Norris,596057,Empty,,,4.0,SL,Breaking_Ball,Breaking_Ball
+29,bottom,3,2.0,2.0,X,Hit Into Play - Out(s),"In play, out(s)",L,Jon Jay,L,Daniel Norris,596057,Empty,,,5.0,SL,Fastball,Breaking_Ball
+30,top,4,1.0,0.0,B,Ball - Called,Ball,R,John Hicks,R,Dylan Cease,656302,Empty,,,1.0,,Breaking_Ball,
+30,top,4,2.0,0.0,B,Ball - Called,Ball,R,John Hicks,R,Dylan Cease,656302,Empty,,,2.0,SL,Fastball,Breaking_Ball
+30,top,4,2.0,1.0,S,Strike - Swinging,Foul Tip,R,John Hicks,R,Dylan Cease,656302,Empty,,,3.0,FF,Fastball,Fastball
+30,top,4,3.0,1.0,B,Ball - Called,Ball,R,John Hicks,R,Dylan Cease,656302,Empty,,,4.0,FF,Fastball,Fastball
+30,top,4,3.0,2.0,S,Strike - Swinging,Called Strike,R,John Hicks,R,Dylan Cease,656302,Empty,,,5.0,FF,Breaking_Ball,Fastball
+30,top,4,3.0,2.0,X,Hit Into Play - Out(s),"In play, out(s)",R,John Hicks,R,Dylan Cease,656302,Empty,,,6.0,SL,Fastball,Breaking_Ball
+31,top,4,1.0,0.0,B,Ball - Called,Ball,R,Jordy Mercer,R,Dylan Cease,656302,Men_On,,,1.0,,Breaking_Ball,
+31,top,4,1.0,1.0,S,Strike - Swinging,Foul,R,Jordy Mercer,R,Dylan Cease,656302,Men_On,,,2.0,CU,Fastball,Breaking_Ball
+31,top,4,2.0,1.0,B,Ball - Called,Ball,R,Jordy Mercer,R,Dylan Cease,656302,Men_On,,,3.0,FF,Fastball,Fastball
+31,top,4,3.0,1.0,B,Ball - Called,Ball,R,Jordy Mercer,R,Dylan Cease,656302,Men_On,,,4.0,FF,Breaking_Ball,Fastball
+31,top,4,3.0,2.0,S,Strike - Swinging,Foul,R,Jordy Mercer,R,Dylan Cease,656302,Men_On,,,5.0,CU,Fastball,Breaking_Ball
+31,top,4,4.0,2.0,B,Ball - Called,Ball,R,Jordy Mercer,R,Dylan Cease,656302,Men_On,,,6.0,FF,Fastball,Fastball
+32,top,4,0.0,1.0,S,Strike - Swinging,Foul,R,JaCoby Jones,R,Dylan Cease,656302,Men_On,,,1.0,,Fastball,
+32,top,4,0.0,2.0,S,Strike - Swinging,Swinging Strike,R,JaCoby Jones,R,Dylan Cease,656302,Men_On,,,2.0,FF,Breaking_Ball,Fastball
+32,top,4,0.0,3.0,S,Strike - Swinging,Swinging Strike (Blocked),R,JaCoby Jones,R,Dylan Cease,656302,Men_On,,,3.0,CU,Breaking_Ball,Breaking_Ball
+33,top,4,0.0,1.0,S,Strike - Swinging,Swinging Strike,L,Christin Stewart,R,Dylan Cease,656302,Empty,,,1.0,,Changeup,
+33,top,4,0.0,2.0,S,Strike - Swinging,Swinging Strike,L,Christin Stewart,R,Dylan Cease,656302,Empty,,,2.0,CH,Changeup,Changeup
+33,top,4,0.0,3.0,S,Strike - Swinging,Called Strike,L,Christin Stewart,R,Dylan Cease,656302,Empty,,,3.0,CH,Changeup,Changeup
+34,bottom,4,0.0,1.0,S,Strike - Swinging,Called Strike,R,Eloy Jimenez,L,Daniel Norris,596057,Men_On,,,1.0,,Fastball,
+34,bottom,4,0.0,2.0,S,Strike - Swinging,Swinging Strike,R,Eloy Jimenez,L,Daniel Norris,596057,Men_On,,,2.0,FT,Breaking_Ball,Fastball
+34,bottom,4,1.0,2.0,B,Ball - Called,Ball,R,Eloy Jimenez,L,Daniel Norris,596057,Men_On,,,3.0,CU,Breaking_Ball,Breaking_Ball
+34,bottom,4,2.0,2.0,B,Ball - Called,Hit By Pitch,R,Eloy Jimenez,L,Daniel Norris,596057,Men_On,,,4.0,CU,Breaking_Ball,Breaking_Ball
+35,bottom,4,0.0,1.0,S,Strike - Swinging,Called Strike,R,Jose Rondon,L,Daniel Norris,596057,Men_On,,,1.0,,Fastball,
+35,bottom,4,0.0,1.0,X,Hit Into Play - Out(s),"In play, out(s)",R,Jose Rondon,L,Daniel Norris,596057,Men_On,,,2.0,FF,Changeup,Fastball
+36,bottom,4,0.0,0.0,X,Hit Into Play - Out(s),"In play, run(s)",R,Yolmer Sanchez,L,Daniel Norris,596057,RISP,,,1.0,,Fastball,
+37,bottom,4,1.0,0.0,B,Ball - Called,Ball In Dirt,R,Ryan Cordell,L,Daniel Norris,596057,Empty,,,1.0,,Breaking_Ball,
+37,bottom,4,1.0,1.0,S,Strike - Swinging,Swinging Strike,R,Ryan Cordell,L,Daniel Norris,596057,Empty,,,2.0,CU,Breaking_Ball,Breaking_Ball
+37,bottom,4,1.0,2.0,S,Strike - Swinging,Called Strike,R,Ryan Cordell,L,Daniel Norris,596057,Empty,,,3.0,SL,Breaking_Ball,Breaking_Ball
+37,bottom,4,1.0,2.0,X,Hit Into Play - Out(s),"In play, run(s)",R,Ryan Cordell,L,Daniel Norris,596057,Empty,,,4.0,SL,Breaking_Ball,Breaking_Ball
+38,bottom,4,1.0,0.0,B,Ball - Called,Ball,R,Leury Garcia,L,Daniel Norris,596057,Empty,,,1.0,,Fastball,
+38,bottom,4,1.0,1.0,S,Strike - Swinging,Called Strike,R,Leury Garcia,L,Daniel Norris,596057,Empty,,,2.0,FF,Breaking_Ball,Fastball
+38,bottom,4,1.0,1.0,X,Hit Into Play - Out(s),"In play, out(s)",R,Leury Garcia,L,Daniel Norris,596057,Empty,,,3.0,CU,Fastball,Breaking_Ball
+39,top,5,1.0,0.0,B,Ball - Called,Ball,R,Nicholas Castellanos,R,Dylan Cease,656302,Empty,,,1.0,,Fastball,
+39,top,5,1.0,1.0,S,Strike - Swinging,Swinging Strike,R,Nicholas Castellanos,R,Dylan Cease,656302,Empty,,,2.0,FF,Changeup,Fastball
+39,top,5,1.0,2.0,S,Strike - Swinging,Foul,R,Nicholas Castellanos,R,Dylan Cease,656302,Empty,,,3.0,CH,Fastball,Changeup
+39,top,5,1.0,2.0,S,Strike - Swinging,Foul,R,Nicholas Castellanos,R,Dylan Cease,656302,Empty,,,4.0,FF,Breaking_Ball,Fastball
+39,top,5,1.0,2.0,X,Hit Into Play - Out(s),"In play, out(s)",R,Nicholas Castellanos,R,Dylan Cease,656302,Empty,,,5.0,SL,Fastball,Breaking_Ball
+40,top,5,0.0,1.0,S,Strike - Swinging,Swinging Strike,R,Brandon Dixon,R,Dylan Cease,656302,Empty,,,1.0,,Changeup,
+40,top,5,0.0,2.0,S,Strike - Swinging,Foul,R,Brandon Dixon,R,Dylan Cease,656302,Empty,,,2.0,CH,Fastball,Changeup
+40,top,5,0.0,3.0,S,Strike - Swinging,Called Strike,R,Brandon Dixon,R,Dylan Cease,656302,Empty,,,3.0,FF,Breaking_Ball,Fastball
+41,top,5,0.0,0.0,X,Hit Into Play - Out(s),"In play, run(s)",L,Jeimer Candelario,R,Dylan Cease,656302,Empty,,,1.0,,Changeup,
+42,top,5,0.0,1.0,S,Strike - Swinging,Called Strike,L,Harold Castro,R,Dylan Cease,656302,Empty,,,1.0,,Fastball,
+42,top,5,0.0,2.0,S,Strike - Swinging,Foul,L,Harold Castro,R,Dylan Cease,656302,Empty,,,2.0,FF,Breaking_Ball,Fastball
+42,top,5,1.0,2.0,B,Ball - Called,Ball,L,Harold Castro,R,Dylan Cease,656302,Empty,,,3.0,CU,Changeup,Breaking_Ball
+42,top,5,2.0,2.0,B,Ball - Called,Ball,L,Harold Castro,R,Dylan Cease,656302,Empty,,,4.0,CH,Fastball,Changeup
+42,top,5,2.0,3.0,S,Strike - Swinging,Swinging Strike,L,Harold Castro,R,Dylan Cease,656302,Empty,,,5.0,FF,Breaking_Ball,Fastball
+43,bottom,5,0.0,0.0,,,"Defensive Substitution: Gordon Beckham replaces center fielder JaCoby Jones, batting 1st, playing second base.  ",R,Yoan Moncada,L,Daniel Norris,596057,Empty,,,,,,
+43,bottom,5,0.0,0.0,,,Defensive switch from second base to center field for Niko Goodrum.  ,R,Yoan Moncada,L,Daniel Norris,596057,Empty,,,,,,
+43,bottom,5,1.0,0.0,B,Ball - Called,Ball,R,Yoan Moncada,L,Daniel Norris,596057,Empty,,,1.0,,Breaking_Ball,
+43,bottom,5,2.0,0.0,B,Ball - Called,Ball,R,Yoan Moncada,L,Daniel Norris,596057,Empty,,,2.0,CU,Fastball,Breaking_Ball
+43,bottom,5,2.0,1.0,S,Strike - Swinging,Swinging Strike,R,Yoan Moncada,L,Daniel Norris,596057,Empty,,,3.0,FT,Changeup,Fastball
+43,bottom,5,2.0,2.0,S,Strike - Swinging,Swinging Strike,R,Yoan Moncada,L,Daniel Norris,596057,Empty,,,4.0,CH,Changeup,Changeup
+43,bottom,5,2.0,2.0,X,Hit Into Play - Out(s),"In play, out(s)",R,Yoan Moncada,L,Daniel Norris,596057,Empty,,,5.0,CH,Changeup,Changeup
+44,bottom,5,0.0,0.0,,,Tigers center fielder JaCoby Jones left the game due to an injured back.  ,R,Jose Abreu,L,Daniel Norris,596057,Empty,,,,,,
+44,bottom,5,1.0,0.0,B,Ball - Called,Ball,R,Jose Abreu,L,Daniel Norris,596057,Empty,,,1.0,,Breaking_Ball,
+44,bottom,5,1.0,1.0,S,Strike - Swinging,Foul,R,Jose Abreu,L,Daniel Norris,596057,Empty,,,2.0,SL,Breaking_Ball,Breaking_Ball
+44,bottom,5,1.0,1.0,X,Hit Into Play - Out(s),"In play, out(s)",R,Jose Abreu,L,Daniel Norris,596057,Empty,,,3.0,SL,Fastball,Breaking_Ball
+45,bottom,5,1.0,0.0,B,Ball - Called,Ball,R,James McCann,L,Daniel Norris,596057,Empty,,,1.0,,Breaking_Ball,
+45,bottom,5,1.0,1.0,S,Strike - Swinging,Called Strike,R,James McCann,L,Daniel Norris,596057,Empty,,,2.0,CU,Fastball,Breaking_Ball
+45,bottom,5,1.0,2.0,S,Strike - Swinging,Foul,R,James McCann,L,Daniel Norris,596057,Empty,,,3.0,FF,Changeup,Fastball
+45,bottom,5,1.0,3.0,S,Strike - Swinging,Swinging Strike,R,James McCann,L,Daniel Norris,596057,Empty,,,4.0,CH,Fastball,Changeup
