@@ -97,3 +97,31 @@ def scrape_espn_player_data(url, final_df):
             # Add Data to final_df
             final_df = pd.concat([final_df, temp_df], ignore_index=True)
     return final_df
+
+
+def final_model(predictors, target, new_pitch):
+    
+    target = pitch_clean['pitch_type']
+    predictors = pitch_clean.drop(['pitch_type', 'hitter', 'pitcher' ], axis=1)
+    
+    X_train, X_test, y_train, y_test = train_test_split(predictors, target, random_state=10)
+    
+    num_features = list(predictors.select_dtypes(exclude='object'))
+    num_features = [i for i in num_features if i not in {'about.inning', 'pitchData.zone', 'matchup.pitcher.id'}]
+    numeric_transformer = Pipeline(steps=[('keeper', None)])
+    cat_transfomer = Pipeline(steps=[('onehot', OneHotEncoder(handle_unknown='ignore', categories='auto'))])
+    
+    preprocessor = ColumnTransformer(transformers=[('num', numeric_transformer, num_features),
+                                              ('cat', cat_transfomer, cat_features)])
+    pipe = Pipeline(steps=[('preprocessor', preprocessor),
+                              ('classifier', classifiers_test)])
+    pipe.fit(X_train, y_train)
+    print(pitch_functions.calc_acc_and_f1_score(y_test, pipe.predict(X_test)))
+    prediction = pipe.predict(new_pitch)
+    
+    
+    if prediction == 1:
+        print ('Fastball')
+    else: 
+        print ('Off_Speed')
+    

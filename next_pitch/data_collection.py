@@ -105,10 +105,10 @@ def merge_player_stats(dataframe):
     pitcher_df = pitcher_df[['PLAYER', 'WAR', 'WHIP', 'ERA', 'SO']]
     pitcher_df = pitcher_df.rename(columns={'PLAYER': 'pitcher'})
     
-    dataframe = main_df.rename(columns={'matchup.batter.fullName': 'hitter',
+    dataframe = dataframe.rename(columns={'matchup.batter.fullName': 'hitter',
                                       'matchup.pitcher.fullName': 'pitcher'})
     
-    merged = pd.merge(hitter_df, main_df, on='hitter')
+    merged = pd.merge(hitter_df, dataframe, on='hitter')
     full_merge = pd.merge(pitcher_df, merged, on='pitcher')
     
     return full_merge
@@ -139,7 +139,7 @@ def get_clean_data(start_date, end_date):
     
     final = added_counts
     
-    return final.dropna().copy()
+    return final.copy()
     
     
     
