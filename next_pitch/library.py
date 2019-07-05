@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 np.random.seed(0)
 import os
-import pitch_functions
+import next_pitch 
 import seaborn as sns
 
 
