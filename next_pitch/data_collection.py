@@ -124,6 +124,17 @@ def add_atbat_counts(dataframe):
     
     return final_pitches
 
+def binarize_target(dataframe):
+    pitch_clean = dataframe
+    pitch_dicts = {'Fastball': 1,
+               '0': 1,
+              'Breaking_Ball': 0,
+              'Changeup': 0}
+    pitch_clean['pitch_type'] = pitch_clean['pitch_type'].map(pitch_dicts)
+    pitch_clean['prior_pitch_type'] = pitch_clean['prior_pitch_type'].map(pitch_dicts)
+    pitch_cleaned = pitch_clean.dropna()
+    return pitch_cleaned
+
 
 def get_clean_data(start_date, end_date):
     
@@ -140,6 +151,8 @@ def get_clean_data(start_date, end_date):
     final = added_counts
     
     return final.copy()
+
+
     
     
     

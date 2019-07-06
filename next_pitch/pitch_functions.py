@@ -31,8 +31,7 @@ from keras.layers import Bidirectional, Activation
 
 
 
-
-
+# Evaluation Functions
 
 
 
@@ -59,7 +58,8 @@ def calc_acc_and_f1_score(true, preds, model_name='Model Name'):
     print('F1-Score: {:.3f}'.format(f1))
     print('AUC: {:.3f}'.format(multi_auc))
 
-
+# Pipeline for model testing
+    
 def run_classifier_models(classifiers, preprocessor, X_train, X_test, y_train, y_test):
     for classifier in classifiers:
         ''' Intialize Pipeline, Fit Pipeline to Train Set''' 
@@ -78,6 +78,8 @@ def run_classifier_models(classifiers, preprocessor, X_train, X_test, y_train, y
         pitch_functions.calc_acc_and_f1_score(y_test, clf1.predict(X_test))
         print('\n')
 
+        
+# Webscrape Function
 def scrape_espn_player_data(url, final_df):
 
     '''This functions scrapes ESPN leaderboard data and returns a Pandas Data Frame'''
@@ -98,9 +100,10 @@ def scrape_espn_player_data(url, final_df):
             final_df = pd.concat([final_df, temp_df], ignore_index=True)
     return final_df
 
+# Final Model, performs train-test split and outputs predicted value on new data.
 
-def final_model(predictors, target, new_pitch):
-    
+def final_model(dataframe, classifier, new_pitch):
+    pitch_clean = dataframe
     target = pitch_clean['pitch_type']
     predictors = pitch_clean.drop(['pitch_type', 'hitter', 'pitcher' ], axis=1)
     
@@ -108,15 +111,19 @@ def final_model(predictors, target, new_pitch):
     
     num_features = list(predictors.select_dtypes(exclude='object'))
     num_features = [i for i in num_features if i not in {'about.inning', 'pitchData.zone', 'matchup.pitcher.id'}]
+    
+    cat_features = list(predictors.select_dtypes(include='object'))
+    cat_features.extend(['about.inning', 'pitchData.zone', 'count', 'matchup.pitcher.id'])
+    
     numeric_transformer = Pipeline(steps=[('keeper', None)])
     cat_transfomer = Pipeline(steps=[('onehot', OneHotEncoder(handle_unknown='ignore', categories='auto'))])
     
     preprocessor = ColumnTransformer(transformers=[('num', numeric_transformer, num_features),
                                               ('cat', cat_transfomer, cat_features)])
     pipe = Pipeline(steps=[('preprocessor', preprocessor),
-                              ('classifier', classifiers_test)])
+                              ('classifier', classifier)])
     pipe.fit(X_train, y_train)
-    print(pitch_functions.calc_acc_and_f1_score(y_test, pipe.predict(X_test)))
+    #print(next_pitch.pitch_functions.calc_acc_and_f1_score(y_test, pipe.predict(X_test)))
     prediction = pipe.predict(new_pitch)
     
     
