@@ -12,7 +12,7 @@
     }
   </style>
   <body onload="brython()">
-    <h1>User Input</h1>
+    <!--Original Version of User Input<h1>User Input</h1>-->
     <script type="text/python3">
       from browser import document, ajax
       import json
@@ -32,13 +32,39 @@
           req.bind("complete", show_results)
           req.open("POST", "/output", True)
           req.set_header("content-type","application/json")
-          data = json.dumps({"user_input": document["user_input"].value})
+          data = json.dumps({"pitcher": document["pitcher"].value,
+                            'hitter': document["hitter"].value,
+                            'top/bottom': document["about.halfInning"].value,
+                            'inning': document["about.inning"].value,
+                            'hitter_side': document["matchup.batSide.code"].value,
+                            'pitcher_side': document["matchup.pitchHand.code"].value,
+                            'runners_on': document["matchup.splits.menOnBase"].value,
+                            'nasty': document["pitchData.nastyFactor"].value,
+                            'zone': document["pitchData.zone"].value,
+                            'pitch_num': document["pitchNumber"].value,
+                            'pitch_type': document["pitch_type"].value,
+                            'prior_pitch_type': document["prior_pitch_type"].value,
+                            'count': document["count"].value})
           req.send(data)
 
 
       document["click_button"].bind("click", get_output)
     </script>
-    <textarea id="user_input"></textarea>
+    <!-- Addding Labels to Text Boxes-->
+    <textarea id="pitcher"></textarea>
+    <textarea id="hitter"></textarea>
+    <textarea id="about.halfInning"></textarea>
+    <textarea id="about.inning"></textarea>
+    <textarea id="matchup.batSide.code"></textarea>
+    <textarea id="matchup.pitchHand.code"></textarea>
+    <textarea id="matchup.splits.menOnBase"></textarea>
+    <textarea id="pitchData.nastyFactor"></textarea>
+    <textarea id="pitchData.zone"></textarea>
+    <textarea id="pitchNumber"></textarea>
+    <textarea id="pitch_type"></textarea>
+    <textarea id='prior_pitch_type'><textarea>
+    <textarea id='count'></textarea>
+
     <button id="click_button">Click here</button>
     <br></br>
     <h1>User Output</h1>
