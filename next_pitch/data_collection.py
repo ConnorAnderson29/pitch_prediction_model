@@ -96,8 +96,8 @@ def map_pitches(dataframe):
 
 def merge_player_stats(dataframe):
     
-    hitter_df = pd.read_csv('../public_data/hitter_data.csv')
-    pitcher_df = pd.read_csv('../public_data/pitcher_data.csv')
+    hitter_df = pd.read_csv('public_data/hitter_data.csv')
+    pitcher_df = pd.read_csv('public_data/pitcher_data.csv')
     
     hitter_df = hitter_df[['PLAYER', 'SLG', 'OPS', 'WAR']]
     hitter_df = hitter_df.rename(columns={'PLAYER': 'hitter'})

@@ -102,18 +102,20 @@ def scrape_espn_player_data(url, final_df):
 
 # Final Model, performs train-test split and outputs predicted value on new data.
 
-def final_model(dataframe, classifier, new_pitch):
+def final_model(X_test, y_test, dataframe, classifier): #new_pitch
     pitch_clean = dataframe
     target = pitch_clean['pitch_type']
     predictors = pitch_clean.drop(['pitch_type', 'hitter', 'pitcher' ], axis=1)
     
-    X_train, X_test, y_train, y_test = train_test_split(predictors, target, random_state=10)
+    X_train = predictors
+    y_train = target
+    #X_train, X_test, y_train, y_test = train_test_split(predictors, target, random_state=10)
     
     num_features = list(predictors.select_dtypes(exclude='object'))
-    num_features = [i for i in num_features if i not in {'about.inning', 'pitchData.zone', 'matchup.pitcher.id'}]
+    num_features = [i for i in num_features if i not in {'about.inning', 'pitchData.zone'}]
     
     cat_features = list(predictors.select_dtypes(include='object'))
-    cat_features.extend(['about.inning', 'pitchData.zone', 'count', 'matchup.pitcher.id'])
+    cat_features.extend(['about.inning', 'pitchData.zone', 'count'])
     
     numeric_transformer = Pipeline(steps=[('keeper', None)])
     cat_transfomer = Pipeline(steps=[('onehot', OneHotEncoder(handle_unknown='ignore', categories='auto'))])
@@ -122,13 +124,14 @@ def final_model(dataframe, classifier, new_pitch):
                                               ('cat', cat_transfomer, cat_features)])
     pipe = Pipeline(steps=[('preprocessor', preprocessor),
                               ('classifier', classifier)])
-    pipe.fit(X_train, y_train)
-    #print(next_pitch.pitch_functions.calc_acc_and_f1_score(y_test, pipe.predict(X_test)))
-    prediction = pipe.predict(new_pitch)
+    pipe = pipe.fit(X_train, y_train)
+    print(calc_acc_and_f1_score(y_test, pipe.predict(X_test)))
+    #prediction = pipe.predict(new_pitch)
+    return pipe
     
     
-    if prediction == 1:
-        print ('Fastball')
-    else: 
-        print ('Off_Speed')
+#     if prediction == 1:
+#         print ('Fastball')
+#     else: 
+#         print ('Off_Speed')
     
