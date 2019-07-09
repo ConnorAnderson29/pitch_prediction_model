@@ -33,18 +33,18 @@
           req.open("POST", "/output", True)
           req.set_header("content-type","application/json")
           data = json.dumps({"pitcher": document["pitcher"].value,
-                            'hitter': document["hitter"].value,
-                            'top/bottom': document["about.halfInning"].value,
-                            'inning': document["about.inning"].value,
-                            'hitter_side': document["matchup.batSide.code"].value,
-                            'pitcher_side': document["matchup.pitchHand.code"].value,
-                            'runners_on': document["matchup.splits.menOnBase"].value,
-                            'nasty': document["pitchData.nastyFactor"].value,
-                            'zone': document["pitchData.zone"].value,
-                            'pitch_num': document["pitchNumber"].value,
-                            'pitch_type': document["pitch_type"].value,
-                            'prior_pitch_type': document["prior_pitch_type"].value,
-                            'count': document["count"].value})
+                            "hitter": document["hitter"].value,
+                            "about.halfInning": document["about.halfInning"].value,
+                            "about.inning": document["about.inning"].value,
+                            "matchup.batSide.code": document["matchup.batSide.code"].value,
+                            "matchup.pitchHand.code": document["matchup.pitchHand.code"].value,
+                            "matchup.splits.menOnBase": document["matchup.splits.menOnBase"].value,
+                            "pitchData.nastyFactor": document["pitchData.nastyFactor"].value,
+                            "pitchData.zone': document["pitchData.zone"].value,
+                            "pitchNumber": document["pitchNumber"].value,
+                            "pitch_type": document["pitch_type"].value,
+                            "prior_pitch_type": document["prior_pitch_type"].value,
+                            "count": document["count"].value})
           req.send(data)
 
 
@@ -85,7 +85,7 @@
     <textarea id="pitch_type"></textarea>
     <br></br>
     <label for='prior_pitch_type'>Input 0/1</label>
-    <textarea id='prior_pitch_type'><textarea>
+    <textarea id='prior_pitch_type'></textarea>
     <br></br>
     <label for='count'>What is the count?</label>
     <textarea id='count'></textarea>
@@ -95,6 +95,7 @@
     <button id="click_button">Click here</button>
     <br></br>
     <h1>User Output</h1>
+    <br></br>
     <!--try replacing yellow with div to remove the yellow styling-->
     <yellow id="result"></yellow>
   </body>
