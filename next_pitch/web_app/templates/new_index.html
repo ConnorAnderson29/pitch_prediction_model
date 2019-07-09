@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>First Flask app</title>
+    <title>Next Pitch Classifier</title>
     <!--both brython.js and brython_stdlib.js files live in the static/ dir-->
     <script type="text/javascript" src="brython.js"></script>
     <script type="text/javascript" src="brython_stdlib.js"></script>
@@ -32,20 +32,20 @@
           req.bind("complete", show_results)
           req.open("POST", "/output", True)
           req.set_header("content-type","application/json")
-          data = json.dumps({"pitcher": document["pitcher"].value,
-                            "hitter": document["hitter"].value,
-                            "about.halfInning": document["about.halfInning"].value,
-                            "about.inning": document["about.inning"].value,
-                            "matchup.batSide.code": document["matchup.batSide.code"].value,
-                            "matchup.pitchHand.code": document["matchup.pitchHand.code"].value,
-                            "matchup.splits.menOnBase": document["matchup.splits.menOnBase"].value,
-                            "pitchData.nastyFactor": document["pitchData.nastyFactor"].value,
-                            "pitchData.zone": document["pitchData.zone"].value,
-                            "pitchNumber": document["pitchNumber"].value,
-                            "pitch_type": document["pitch_type"].value,
-                            "prior_pitch_type": document["prior_pitch_type"].value,
-                            "count": document["count"].value})
-          req.send(data)
+          fields = [
+          'pitcher',
+          'hitter',
+          'about.inning',
+          'about.halfInning',
+          'matchup.batSide.code',
+          'matchup.pitchHand.code',
+          'matchup.splits.menOnBase',
+          'pitchNumber',
+          'prior_pitch_type',
+          'count',
+          ]
+          data = {field: document[field].value for field in fields}
+          req.send(json.dumps(data))
 
 
       document["click_button"].bind("click", get_output)
@@ -72,17 +72,8 @@
     <label for="matchup.splits.menOnBase">How many runners on base?</label>
     <textarea id="matchup.splits.menOnBase"></textarea>
     <br></br>
-    <label for="pitchData.nastyFactor">How nasty is the pitcher?</label>
-    <textarea id="pitchData.nastyFactor"></textarea>
-    <br></br>
-    <label for="pitchData.zone">Where is the zone?</label>
-    <textarea id="pitchData.zone"></textarea>
-    <br></br>
     <label for="pitchNumber">How many pitches has the pitcher thrown?</label>
     <textarea id="pitchNumber"></textarea>
-    <br></br>
-    <label for="pitch_type">Input 0/1</label>
-    <textarea id="pitch_type"></textarea>
     <br></br>
     <label for="prior_pitch_type">Input 0/1</label>
     <textarea id="prior_pitch_type"></textarea>

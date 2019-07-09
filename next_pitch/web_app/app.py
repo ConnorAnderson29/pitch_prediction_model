@@ -4,10 +4,11 @@ import pickle
 
 
 from flask import Flask, request, render_template, jsonify
+pd.set_option('display.max_columns', None)
 
 app = Flask(__name__, static_url_path="")
 
-with open('final_test.pkl', 'rb') as f:
+with open('final.pkl', 'rb') as f:
      model = pickle.load(f)
 
 @app.route("/")
@@ -35,11 +36,31 @@ def merge_player_stats(dataframe):
     
     return full_merge
 
+test_list = ['pitcher',
+            'WAR_x',
+            'WHIP',
+            'ERA',
+            'SO',
+            'hitter',
+            'SLG',
+            'OPS',
+            'WAR_y',
+            'about.halfInning',
+            'about.inning',
+            'matchup.batSide.code',
+            'matchup.pitchHand.code',
+            'matchup.splits.menOnBase',
+            'pitchData.nastyFactor',
+            'pitchData.zone',
+            'pitchNumber',
+            'pitch_type',
+            'prior_pitch_type',
+            'count']
+
 def format_user_input(user_dict):
-    live_df = pd.DataFrame.from_dict(user_dict)
+    live_df = pd.DataFrame([user_dict])
     created_test = merge_player_stats(live_df)
-    created_test['pitchData.nastyFactor'] = 35.326
-    created_test['pitchData.zone'] = 9.8751
+    created_test = created_test[test_list]
     return created_test
 
 
@@ -47,9 +68,25 @@ def format_user_input(user_dict):
 def output():
     """Retun text from user input"""
     #Python object to store user data
-    data = list(request.get_json(force=True))
-    dictionary_of_data = format_user_input(data)
-    preds = model.predict_probab(dictionary_of_data)
+    data = request.get_json(force=True)
+    float_keys = set(['inning', 'pitchNumber', 'prior_pitch_type'])
+    int_keys = set(['about.inning'])
+
+    for key, val in data.items():
+        if key in float_keys:
+            data[key] = float(val)
+    for key,val in data.items():
+        if key in int_keys:
+            data[key] = int(val)
+    # Make Keys 
+    data['pitch_type'] = 1.0
+    data['pitchData.nastyFactor'] = 35.326
+    data['pitchData.zone'] = 9.8751
+    print(data)
+
+    formatted_df = format_user_input(data)
+    print(formatted_df)
+    preds = model.predict_proba(formatted_df)
     off_speed_pred = preds[0][0]
     fastball_pred = preds[0][1]
     # every time the user_input identifier
@@ -71,6 +108,6 @@ def output():
     
     
     # output dictionary to web
-    print(data)
+    print(final_dict)
     return jsonify(final_dict)
 
