@@ -14,7 +14,8 @@ with open('final.pkl', 'rb') as f:
 @app.route("/")
 def index():
     """Return the main page."""
-    return render_template("new_index.html")
+    return render_template("index.html", hitters=hitters, pitchers=pitchers, half_inning=half_inning, innings=innings, 
+    hitter_side=hitter_side, pitcher_side=pitcher_side, prev_pitch= prev_pitch, count=count, baserunners=baserunners)
 
 def merge_player_stats(dataframe):
     '''Sources data from CSVs located in the main directory. 
@@ -56,6 +57,21 @@ test_list = ['pitcher',
             'pitch_type',
             'prior_pitch_type',
             'count']
+
+hitters = pd.read_csv('../../public_data/hitter_data.csv')['PLAYER'].tolist()
+pitchers = pd.read_csv('../../public_data/pitcher_data.csv')['PLAYER'].tolist()
+half_inning = ["top", "bottom"]
+innings = [1,2,3,4,5,6,7,8,9]
+hitter_side = ['L', 'R']
+pitcher_side = ['L', 'R']
+prev_pitch = [1.0,0.0]
+count = ["0.0-0.0", "0.0-0.1", "0.0-0.2", "1.0-0.0", 
+         "1.0-1.0", "1.0-2.0", "2.0-0.0", "2.0-1.0", 
+         "2.0-2.0","3.0-0.0", "3.0-1.0", "3.0-2.0"]
+baserunners = [('Men_On'), ('Empty'), ('Loaded')]
+
+
+
 
 def format_user_input(user_dict):
     live_df = pd.DataFrame([user_dict])
