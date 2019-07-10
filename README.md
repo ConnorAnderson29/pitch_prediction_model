@@ -22,11 +22,10 @@ Data:
 - Training: All pitches from the 2018 MLB season(~700,000 pitches).
 - Testing: All pitches between March 28, 2019, and May 31st 2019.(~150,000).
 
-Model:
-- Gradient Boosted Trees Classifier
+Model: Gradient Boosted Trees Classifier
   - Parameters:
-  N_estimators = 200
-  Max_depth = 10
+   -N_estimators = 200
+  - Max_depth = 10
   
 Performance:
 Accuracy Score: ~70%
