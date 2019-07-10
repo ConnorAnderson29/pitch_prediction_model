@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Stay Safe in the Backcountry</title>
+        <title>NextPitchy</title>
         <script type="text/javascript" src="brython.js"></script>
         <script type="text/javascript" src="brython_stdlib.js"></script>
        
@@ -10,8 +10,8 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-<title>Grayscale - Start Bootstrap Theme</title>
-
+<title>NextPitch</title>
+<br><br>
 <!-- Bootstrap core CSS -->
 <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -76,28 +76,30 @@
   <header class="masthead">
     <div class="container d-flex h-100 align-items-center">
       <div class="mx-auto text-center">
-        <h1 class="mx-auto my-0 text-uppercase">Next Pitch Prediction Classifier</h1>
+        <h1 class="mx-auto my-0 text-uppercase">NextPitch</h1>
         <div class="form-row">
+  
 <!--Pitching START-->
-          <div class="form-group">
+       <!--<section>-->
+          <div class="form-group col-sm-4">
             <label for="pitcher">Pitchers</label>
               <select class="form-control" id="pitcher">
                 {% for pitcher in pitchers %}
                 <option value="{{pitcher}}" >{{pitcher}}</option>
                 {% endfor %}
               </select>
-            </div>
+          </div>
 <!--Hitter Start-->
-          <div class="form-group">
+          <div class="form-group col-sm-4">
             <label for="hitter">Hitters</label>
               <select class="form-control" id="hitter">
                 {% for hitter in hitters %}
                 <option value="{{hitter}}" >{{hitter}}</option>
                 {% endfor %}
               </select>
-            </div>
+          </div>
 <!--HALFINNING START-->
-            <div class="form-group">
+            <div class="form-group col-sm-4">
               <label for="about.halfInning">Top or Bottom?</label>
                 <select class="form-control" id="about.halfInning">
                 {% for half in half_inning %}
@@ -106,114 +108,91 @@
               </select>
              </div>
 <!--Inning Start-->
-            <div class="form-group">
+            <div class="form-group col-sm-4">
               <label for="about.inning">Inning</label>
                 <select class="form-control" id="about.inning">
                   {% for inning in innings %}
                     <option value="{{inning}}" >{{inning}}</option>
                       {% endfor %}
                   </select>
-                </div>
+            </div>
+          <br><br>
+          <br><br>
+          <br><br>
 <!--Batter Side-->
-            <div class="form-group">
+            <div class="form-group col-sm-4">
               <label for="matchup.batSide.code">Batter's Hand</label>
                 <select class="form-control" id="matchup.batSide.code">
                   {% for hand in hitter_side %}
                    <option value="{{hand}}" >{{hand}}</option>
                     {% endfor %}
                   </select>
-               </div>
+            </div>
 <!--Batter Side-->
-            <div class="form-group">
+            <div class="form-group col-sm-4">
               <label for="matchup.pitchHand.code">Pitcher's Hand</label>
                 <select class="form-control" id="matchup.pitchHand.code">
                   {% for hand in pitcher_side %}
                    <option value="{{hand}}" >{{hand}}</option>
                     {% endfor %}
                  </select>
-              </div>
+            </div>
 <!--Baserunners-->
-            <div class="form-group">
-              <label for="matchup.splits.menOnBase">Are there men on Base?</label>
-              <select class="form-control" id="matchup.splits.menOnBase">
-              {% for men in baserunners %}
-              <option value="{{men}}" >{{men}}</option>
-              {% endfor %}
-            </select>
-          </div>
-<!--PITCH NUMBER-->
             <div class="form-group col-sm-4">
+              <label for="matchup.splits.menOnBase">Are there men on Base?</label>
+                <select class="form-control" id="matchup.splits.menOnBase">
+                {% for men in baserunners %}
+                <option value="{{men}}" >{{men}}</option>
+                {% endfor %}
+              </select>
+            </div>
+<!--PITCH NUMBER-->
+            <div class="form-group col-sm-3">
                 <label for="pitchNumber">Current Pitch Count</label>
                 <input type="text" class="form-control" id="pitchNumber" value="55.0">
             </div>
 <!--PRIOR PITCH-->
-                <div class="form-group"></div>
-                  <label for="prior_pitch_type">Prior</label>
+                <div class="form-group col-sm-2">
+                  <label for="prior_pitch_type">Prior Pitch</label>
                     <select class="form-control" id="prior_pitch_type">
                       {% for pitch in prev_pitch %}
                         <option value="{{pitch}}" >{{pitch}}</option>
                       {% endfor %}
                     </select>
-                  </div>
+                </div>
 <!-- COUNT-->
-                  <div class="form-group"></div>
-                    <label for="count">Count of current at-bat</label>
+                  <div class="form-group col-sm-2">
+                    <label for="count">Count</label>
                       <select class="form-control" id="count">
                         {% for count in count %}
                           <option value="{{count}}" >{{count}}</option>
                             {% endfor %}
                       </select>
-                    </div>
-
-          <!---<div class="form-group col-sm-4">
-            <label for="about.halfInning">What part of the inning?(top/bottom)</label>
-            <input type="text" class="form-control" id="about.halfInning" value="top">
-          </div>
-          <div class="form-group col-sm-4">
-            <label for="about.inning">What inning is it?</label>
-            <input type="text" class="form-control" id="about.inning" value="6">
-          </div>
-          <div class="form-group col-sm-4">
-            <label for="matchup.batSide.code">Hitter's Dominant Side</label>
-            <input type="text" class="form-control" id="matchup.batSide.code" value="L">
-          </div>
-          <div class="form-group col-sm-4">
-            <label for="matchup.pitchHand.code">Pitcher's Dominant Side</label>
-            <input type="text" class="form-control" id="matchup.pitchHand.code" value="R">
-          </div>
-          <div class="form-group col-sm-4">
-            <label for="matchup.splits.menOnBase">Are there men on base??</label>
-            <input type="text" class="form-control" id="matchup.splits.menOnBase" value="Men_On">
-          </div>
-          
-          </div>
-          <div class="form-group col-sm-4">
-            <label for="prior_pitch_type">Previous Pitch(1.0 = Fastball, 0.0=Off Speed</label>
-            <input type="text" class="form-control" id="prior_pitch_type" value="1.0">
-          </div>
-          <div class="form-group col-sm-4">
-            <label for="count">What is the current count?</label>
-            <input type="text" class="form-control" id="count" value="1.0-1.0">
-          </div>
-          </div>-->
+                  </div>
+            <!--</section>-->
           <br>
           <br>
+          <br>
+        <div class="form-row">
           <button id="predict_button">Predict!</button>
           <!-- <div class='answered' id="result"></div> -->
           <h2 class="text-white-50 mx-auto mt-2 mb-5"id="result"></h2>
           <div id="result"></div>
         </div>
+        </div>
       </div>
     </div>
+  </header>
 
   <!-- About Section -->
   <section id="about" class="about-section text-center">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
-          <h2 class="text-white mb-4">Next Pitch Prediction Model</h2>
-          <p class="text-white-50"> Next Pitch uses in-game situations to predict what pitch will come next!
-            
+          <h2 class="text-white mb-4">NextPitch Prediction Model</h2>
+          <p class="text-white-50"> Use NextPitch to predict what pitch will come next!
+            NextPitch uses historical game data to predict which pitch will be thrown in a given game situation. 
+            Users can enter real game situations while watching live games to see how well the model performs.
         </div>
       </div>
       <img src="img/acuna.jpg" class="img-fluid" alt="">

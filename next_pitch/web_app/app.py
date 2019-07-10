@@ -120,7 +120,7 @@ def output():
 #                             'prior_pitch_type': data["prior_pitch_type"].value,
 #                             'count': data["count"].value}
     final_dict = {'Probability of Off Speed' : off_speed_pred, 
-                 'Probability of Fastball': fastball_pred}
+                 'Probability of Fastball': fastball_pred }
     
     
     # output dictionary to web
