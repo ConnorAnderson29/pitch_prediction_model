@@ -23,6 +23,7 @@ Final Features before Modeling(Pitchers, Hitters, Half_Inning, Inning, Batter Si
 Model: Gradient Boosted Trees Classifier
 - Parameters: N_estimators = 200
 - Max_depth = 10
+
 Performance: 
 - Accuracy Score: ~70% 
 - F1- Score: ~69% 
