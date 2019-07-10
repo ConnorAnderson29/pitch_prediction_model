@@ -1,10 +1,12 @@
 # Next Pitch Prediction Model
+## Goal 
+## - Create a machine learning model that can understand and predict pitches based around game-scenarios.
 
 ## Business Understanding
-Mastering the mental apprroach is one of the hardest parts about being an elite professional hitter. Major League Baseball organizations pay pitchers millions of dollars to confuse opposing hitters. As a college baseball player, I always struggled with understanding how pitchers would attack my weaknesses at the plate. This product will help hitters better understand the patterns pitchers follow and will give them more confidence in their approach at the plate. Hitters aren't the only atheletes that will benefit from this model. Pitchers are notorious for following patterns and becoming predictable. By using this model, they can identify their tendencies and learn how to avoid repeat mistakes. 
+As a former collegiate baseball players, I understand that mastering your mental apprroach is the hardest parts about being an elite hitter. Major League Baseball organizations pay pitchers millions of dollars to confuse opposing hitters and as a player, I always struggled with understanding how pitchers would attack my weaknesses at the plate. NextPitch will help hitters train for in-game scenarios with a data driven advatnage, giving them more confidence in their approach at the plate.
 
 ## Data Understanding
-The data will come from all MLB games played in the 2018 season. This is a large and very diverse dataset(around 2 million pitches). The data will include all information about each individual pitch per game(including: pitch type, base runners, pitcher name, etc..)
+The data is collected from play-by-play data from all games played in the 2018 season. The python wrapper ```StatsApi``` was used to collect both gameids, and play-by-play data. The data comes directly from Major League Baseball and includes information like ```'pitch_types', 'pitch_number', 'pitcher_id', 'men_on_base'``` and other relevant game data. During the collection of data, a dictionary was created with hand-selected columns that were viewed as potetnitally useful.  
 
 ## Data Preparation
 Data is plentiful and fairly easy to retrieve so if more is needed to avoid overfitting then it will be possible to get. After my data is collected, using domain knowledge I will engineer several features that I believe are important(previous pitches, batter attributes, pitcher attributes...etc). Feature engineering will have a huge effect on the model. My goal is to create as close to a replica of the game situation as I can in the data. 
