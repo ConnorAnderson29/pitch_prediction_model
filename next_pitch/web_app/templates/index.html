@@ -90,48 +90,48 @@
 <!--Hitter Start-->
           <div class="form-group">
             <label for="hitter">Hitters</label>
-            <select class="form-control" id="hitter">
-              {% for hitter in hitters %}
-              <option value="{{hitter}}" >{{hitter}}</option>
-              {% endfor %}
-            </select>
-          </div>
+              <select class="form-control" id="hitter">
+                {% for hitter in hitters %}
+                <option value="{{hitter}}" >{{hitter}}</option>
+                {% endfor %}
+              </select>
+            </div>
 <!--HALFINNING START-->
             <div class="form-group">
               <label for="about.halfInning">Top or Bottom?</label>
-              <select class="form-control" id="about.halfInning">
-              {% for half in half_inning %}
-              <option value="{{half}}" >{{half}}</option>
-              {% endfor %}
-            </select>
-          </div>
+                <select class="form-control" id="about.halfInning">
+                {% for half in half_inning %}
+                <option value="{{half}}" >{{half}}</option>
+                {% endfor %}
+              </select>
+             </div>
 <!--Inning Start-->
             <div class="form-group">
               <label for="about.inning">Inning</label>
-              <select class="form-control" id="about.inning">
-              {% for inning in innings %}
-              <option value="{{inning}}" >{{inning}}</option>
-              {% endfor %}
-             </select>
-            </div>
+                <select class="form-control" id="about.inning">
+                  {% for inning in innings %}
+                    <option value="{{inning}}" >{{inning}}</option>
+                      {% endfor %}
+                  </select>
+                </div>
 <!--Batter Side-->
             <div class="form-group">
               <label for="matchup.batSide.code">Batter's Hand</label>
-              <select class="form-control" id="matchup.batSide.code">
-              {% for hand in hitter_side %}
-              <option value="{{hand}}" >{{hand}}</option>
-              {% endfor %}
-             </select>
-            </div>
+                <select class="form-control" id="matchup.batSide.code">
+                  {% for hand in hitter_side %}
+                   <option value="{{hand}}" >{{hand}}</option>
+                    {% endfor %}
+                  </select>
+               </div>
 <!--Batter Side-->
             <div class="form-group">
               <label for="matchup.pitchHand.code">Pitcher's Hand</label>
-              <select class="form-control" id="matchup.pitchHand.code">
-              {% for hand in pitcher_side %}
-              <option value="{{hand}}" >{{hand}}</option>
-              {% endfor %}
-              </select>
-            </div>
+                <select class="form-control" id="matchup.pitchHand.code">
+                  {% for hand in pitcher_side %}
+                   <option value="{{hand}}" >{{hand}}</option>
+                    {% endfor %}
+                 </select>
+              </div>
 <!--Baserunners-->
             <div class="form-group">
               <label for="matchup.splits.menOnBase">Are there men on Base?</label>
@@ -140,31 +140,30 @@
               <option value="{{men}}" >{{men}}</option>
               {% endfor %}
             </select>
-            <br>
           </div>
 <!--PITCH NUMBER-->
             <div class="form-group col-sm-4">
-                <label for="pitchNumber">Pitcher's Current Pitch Count</label>
+                <label for="pitchNumber">Current Pitch Count</label>
                 <input type="text" class="form-control" id="pitchNumber" value="55.0">
             </div>
 <!--PRIOR PITCH-->
-            <div class="form-group"></div>
-            <label for="prior_pitch_type">Prior Pitch(1=Fastball, 0=Off_Speed)</label>
-            <select class="form-control" id="prior_pitch_type">
-              {% for pitch in prev_pitch %}
-              <option value="{{hand}}" >{{pitch}}</option>
-              {% endfor %}
-            </select>
-          </div>
+                <div class="form-group"></div>
+                  <label for="prior_pitch_type">Prior</label>
+                    <select class="form-control" id="prior_pitch_type">
+                      {% for pitch in prev_pitch %}
+                        <option value="{{pitch}}" >{{pitch}}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
 <!-- COUNT-->
-            <div class="form-group"></div>
-            <label for="count"></label>
-            <select class="form-control" id="count">
-              {% for count in count %}
-              <option value="{{count}}" >{{count}}</option>
-              {% endfor %}
-            </select>
-          </div>
+                  <div class="form-group"></div>
+                    <label for="count">Count of current at-bat</label>
+                      <select class="form-control" id="count">
+                        {% for count in count %}
+                          <option value="{{count}}" >{{count}}</option>
+                            {% endfor %}
+                      </select>
+                    </div>
 
           <!---<div class="form-group col-sm-4">
             <label for="about.halfInning">What part of the inning?(top/bottom)</label>

@@ -103,8 +103,8 @@ def output():
     formatted_df = format_user_input(data)
     print(formatted_df)
     preds = model.predict_proba(formatted_df)
-    off_speed_pred = preds[0][0]
-    fastball_pred = preds[0][1]
+    off_speed_pred = round((preds[0][0]), 3) * 100
+    fastball_pred = round((preds[0][1]), 3) * 100 
     # every time the user_input identifier
 #     out = {"pitcher": data["pitcher"].value,
 #                             'hitter': data['hitter'].value,
