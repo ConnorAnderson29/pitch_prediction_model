@@ -1,6 +1,6 @@
 # Next Pitch Prediction Model
 ## Goal 
-#### A web application that utlizies machine learning to make 'pitch-type' predictions based on current MLB game situations
+#### A web application that utilizes machine learning to make 'pitch-type' predictions based on current MLB game situations
 
 ## Business Understanding
 As a former collegiate baseball players, I understand that mastering your mental approach is the hardest part about being an elite hitter. Major League Baseball organizations pay pitchers millions of dollars to confuse opposing hitters and as a player, I always struggled with understanding how pitchers would attack my weaknesses at the plate. NextPitch will help hitters train for in-game scenarios with a data driven advantage, giving them more confidence in their approach at the plate.
