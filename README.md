@@ -1,4 +1,6 @@
 # Next Pitch Prediction Model
+===============================
+
 ## Goal 
 #### A web application that utilizes machine learning to make 'pitch-type' predictions based on current MLB game situations
 ### Presentation 
