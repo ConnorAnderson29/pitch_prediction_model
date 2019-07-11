@@ -116,9 +116,6 @@
                       {% endfor %}
                   </select>
             </div>
-          <br><br>
-          <br><br>
-          <br><br>
 <!--Batter Side-->
             <div class="form-group col-sm-4">
               <label for="matchup.batSide.code">Batter's Hand</label>
@@ -161,7 +158,7 @@
                     </select>
                 </div>
 <!-- COUNT-->
-                  <div class="form-group col-sm-2">
+                  <div class="form-group col-sm-3">
                     <label for="count">Count</label>
                       <select class="form-control" id="count">
                         {% for count in count %}
@@ -170,18 +167,19 @@
                       </select>
                   </div>
             <!--</section>-->
-          <br>
-          <br>
-          <br>
-        <div class="form-row">
-          <button id="predict_button">Predict!</button>
-          <!-- <div class='answered' id="result"></div> -->
-          <h2 class="text-white-50 mx-auto mt-2 mb-5"id="result"></h2>
         </div>
-        <div id="result"></div>
       </div>
     </div>
   </div>
+  <div class="form-row" style="text-align: center">
+    <div class="container">
+      <button id="predict_button">Predict!</button>
+      <!-- <div class='answered' id="result"></div> -->
+      <h2 class="text-white-50 mx-auto mt-2 mb-5"id="result"></h2>
+      </div>
+    </div>
+    <div id="result"></div>
+
   </header>
 
   <!-- About Section -->
