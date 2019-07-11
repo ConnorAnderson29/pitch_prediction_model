@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>NextPitchy</title>
+        <script type="text/javascript" src="brython.js"></script>
+        <script type="text/javascript" src="brython_stdlib.js"></script>
+       
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+<title>NextPitch</title>
+<br><br>
+<!-- Bootstrap core CSS -->
+<!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+<link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!-- Custom fonts for this template -->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<!-- <link href="css/grayscale.min.css" rel="stylesheet"> turned off to try and change the title size -->
+<link href="css/grayscale.css" rel="stylesheet">
+
+
+    </head>
+
+    <body onload="brython(1)">
+      <script type="text/python3">
+        from browser import document, ajax
+        import json
+        import warnings
+
+        def show_results(response):
+            if response.status==200 or response.status==0:
+                document["result"].html = response.text
+            elif response.status == 500:
+                print('py error 500')
+            else:
+                warnings.warn(response.text)
+
+        def get_prediction(ev):
+            """Get the predicted probability."""
+            req = ajax.ajax()
+            req.bind('complete', show_results)
+            req.open('POST', '/output', True)
+            req.set_header('content-type','application/json')
+            fields = [
+            'pitcher',
+            'hitter',
+            'about.inning',
+            'about.halfInning',
+            'matchup.batSide.code',
+            'matchup.pitchHand.code',
+            'matchup.splits.menOnBase',
+            'pitchNumber',
+            'prior_pitch_type',
+            'count']
+            
+            data = {field: document[field].value for field in fields}
+            req.send(json.dumps(data))
+
+        document["predict_button"].bind("click", get_prediction)
+      </script>
+
+
+
+
+
+
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+      <div class="mx-auto text-center">
+        <h1 class="mx-auto my-0 text-uppercase">NextPitch</h1>
+        <div class="form-row">
+  
+<!--Pitching START-->
+       <!--<section>-->
+          <div class="form-group col-sm-4">
+            <label for="pitcher">Pitchers</label>
+              <select class="form-control" id="pitcher">
+                {% for pitcher in pitchers %}
+                <option value="{{pitcher}}" >{{pitcher}}</option>
+                {% endfor %}
+              </select>
+          </div>
+<!--Hitter Start-->
+          <div class="form-group col-sm-4">
+            <label for="hitter">Hitters</label>
+              <select class="form-control" id="hitter">
+                {% for hitter in hitters %}
+                <option value="{{hitter}}" >{{hitter}}</option>
+                {% endfor %}
+              </select>
+          </div>
+<!--HALFINNING START-->
+            <div class="form-group col-sm-4">
+              <label for="about.halfInning">Top or Bottom?</label>
+                <select class="form-control" id="about.halfInning">
+                {% for half in half_inning %}
+                <option value="{{half}}" >{{half}}</option>
+                {% endfor %}
+              </select>
+             </div>
+<!--Inning Start-->
+            <div class="form-group col-sm-4">
+              <label for="about.inning">Inning</label>
+                <select class="form-control" id="about.inning">
+                  {% for inning in innings %}
+                    <option value="{{inning}}" >{{inning}}</option>
+                      {% endfor %}
+                  </select>
+            </div>
+          <br><br>
+          <br><br>
+          <br><br>
+<!--Batter Side-->
+            <div class="form-group col-sm-4">
+              <label for="matchup.batSide.code">Batter's Hand</label>
+                <select class="form-control" id="matchup.batSide.code">
+                  {% for hand in hitter_side %}
+                   <option value="{{hand}}" >{{hand}}</option>
+                    {% endfor %}
+                  </select>
+            </div>
+<!--Batter Side-->
+            <div class="form-group col-sm-4">
+              <label for="matchup.pitchHand.code">Pitcher's Hand</label>
+                <select class="form-control" id="matchup.pitchHand.code">
+                  {% for hand in pitcher_side %}
+                   <option value="{{hand}}" >{{hand}}</option>
+                    {% endfor %}
+                 </select>
+            </div>
+<!--Baserunners-->
+            <div class="form-group col-sm-4">
+              <label for="matchup.splits.menOnBase">Are there men on Base?</label>
+                <select class="form-control" id="matchup.splits.menOnBase">
+                {% for men in baserunners %}
+                <option value="{{men}}" >{{men}}</option>
+                {% endfor %}
+              </select>
+            </div>
+<!--PITCH NUMBER-->
+            <div class="form-group col-sm-3">
+                <label for="pitchNumber">Current Pitch Count</label>
+                <input type="text" class="form-control" id="pitchNumber" value="55.0">
+            </div>
+<!--PRIOR PITCH-->
+                <div class="form-group col-sm-2">
+                  <label for="prior_pitch_type">Prior Pitch</label>
+                    <select class="form-control" id="prior_pitch_type">
+                      {% for pitch in prev_pitch %}
+                        <option value="{{pitch}}" >{{pitch}}</option>
+                      {% endfor %}
+                    </select>
+                </div>
+<!-- COUNT-->
+                  <div class="form-group col-sm-2">
+                    <label for="count">Count</label>
+                      <select class="form-control" id="count">
+                        {% for count in count %}
+                          <option value="{{count}}" >{{count}}</option>
+                            {% endfor %}
+                      </select>
+                  </div>
+            <!--</section>-->
+          <br>
+          <br>
+          <br>
+        <div class="form-row">
+          <button id="predict_button">Predict!</button>
+          <!-- <div class='answered' id="result"></div> -->
+          <h2 class="text-white-50 mx-auto mt-2 mb-5"id="result"></h2>
+        </div>
+        <div id="result"></div>
+      </div>
+    </div>
+  </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about-section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="text-white mb-4">NextPitch Prediction Model</h2>
+          <p class="text-white-50"> Use NextPitch to predict what pitch will come next!
+            NextPitch uses historical game data to predict which pitch will be thrown in a given game situation. 
+            Users can enter real game situations while watching live games to see how well the model performs.
+        </div>
+      </div>
+      <img src="img/field1.jpg" class="img-fluid" alt="">
+    </div>
+  </section>
+  <!-- Contact Section -->
+  <section class="contact-section bg-black">
+      <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <i class="fab fa-linkedin-in"></i>
+                      <!-- <h4 class="text-uppercase m-0"></h4> -->
+                      <!-- <h4 class="fab fa-linkedin-in"</h4> -->
+                      <hr class="my-4">
+                      <div class="small text-black-50">
+                          <a href="https://www.linkedin.com/in/connor-anderson29/">Connor B. Anderson</a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+              <!-- EMAIL LINK -->
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                      <!-- <i class="fas fa-envelope text-primary mb-2"></i> -->
+                      <!-- <h4 class="text-uppercase m-0">Email</h4> -->
+                      <img src="https://cloud.githubusercontent.com/assets/7534680/4515518/6739a508-4bc1-11e4-80bc-670bcc216762.png" 
+                      alt="gmail-icon" style="max-width:20px;">
+                      <!-- <i class="fab fa-gmail"></i> -->
+                      
+                      <hr class="my-4">
+                      <div class="small text-black-50">
+                        <a href="mailto:connorbanderson29@gmail.com">connorbanderson29@gmail.com</a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <!-- GITHUB  LINK -->
+            <div class="col"><div class="card py-4 h-100">
+                <div class="card-body text-center">
+                    <i class="fab fa-github"></i>
+                  <h4 class="text-uppercase m-0"></h4>
+                  <hr class="my-4">
+                  <div class="small text-black-50">
+                      <a href="https://github.com/ConnorAnderson29">
+                        ConnorAnderson29</a>
+                </div>
+                </div>
+              </div></div>
+              <!-- MEDIUM LINK -->
+            <div class="col">
+                <div class="card py-4 h-100">
+                  <div class="card-body text-center">
+                      <i class="fab fa-medium"></i>
+                    <h4 class="text-uppercase m-0"></h4>
+                    <hr class="my-4">
+                    <div class="small text-black-50">
+                        <a href="https://medium.com/@connor.anderson_42477">
+                      Contributing Writer for Towards Data Science
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div></div>
+        </div>
+     </body>
+    </html>
