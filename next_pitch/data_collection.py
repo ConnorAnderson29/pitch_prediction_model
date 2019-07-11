@@ -36,6 +36,8 @@ def collect_game_data(start_date, end_date):
         i = 1
         for index, row in curr_plays_norm.iterrows():
                 play_events = json_normalize(row['playEvents'])
+                '''Determines whether columns are in list defined above and adds data accordingly.
+                    Returns a data frame containing play-by-play game data'''
 
                 for play_events_idx, play_events_row in play_events.iterrows():
 
@@ -64,6 +66,7 @@ def collect_game_data(start_date, end_date):
 # DATA CLEANING
 
 def define_prior_pitch(dataframe):
+    '''Creates a data frame that has a previous pitch column.'''
     each_pitch = dataframe
     pitch_id_df = each_pitch[['pitch_id', 'details.type.code']].copy()
     merged_df = pd.merge(each_pitch, pitch_id_df,how='left', left_on='prior_pitch', right_on='pitch_id')
@@ -75,6 +78,8 @@ def define_prior_pitch(dataframe):
     return each_pitch_clean
 
 def map_pitches(dataframe):
+    '''Files down pitches from 10 options to 3 options. 
+        Fundamental part of the data cleaning'''
     each_pitch_clean = dataframe
     pitch_dict = {'FF': 'Fastball'}
     pitch_dict['FT'] = 'Fastball'
@@ -95,7 +100,8 @@ def map_pitches(dataframe):
     return each_pitch_clean
 
 def merge_player_stats(dataframe):
-    
+    '''Takes player stats from Public Data and merges them by player
+        name and creates a new merged data frame with player stats attached.'''
     hitter_df = pd.read_csv('public_data/hitter_data.csv')
     pitcher_df = pd.read_csv('public_data/pitcher_data.csv')
     
@@ -114,6 +120,9 @@ def merge_player_stats(dataframe):
     return full_merge
 
 def add_atbat_counts(dataframe):
+    '''Changes count columns into strings and then merges a 
+        final COUNT column as a string. 
+        The string will be usedfor OneHotEncoding.'''
     add_feats = dataframe
     add_feats['count.balls'] = add_feats['count.balls'].astype(str)
     add_feats['count.strikes'] = add_feats['count.strikes'].astype(str)
@@ -125,6 +134,8 @@ def add_atbat_counts(dataframe):
     return final_pitches
 
 def binarize_target(dataframe):
+    '''Takes in a data frame, and maps pitch_dict over the data frame columns "previous_pitch_type
+    and pitch_type. Makes it easier for model to predict correctly."'''
     pitch_clean = dataframe
     pitch_dicts = {'Fastball': 1,
                '0': 1,
@@ -137,7 +148,9 @@ def binarize_target(dataframe):
 
 
 def get_clean_data(start_date, end_date):
-    
+    '''Collects and cleans data using start and end dates
+        then acts as a wrapper function for the other 
+        data cleaning functions. Outputs a cleaned data frame'''
     raw_data = collect_game_data(start_date, end_date)
     
     prior_pitch_add = define_prior_pitch(raw_data)
@@ -151,6 +164,16 @@ def get_clean_data(start_date, end_date):
     final = added_counts
     
     return final.copy()
+
+def format_user_input(user_dict):
+    '''Uses user input dictionary recieved from Flask App
+        and turns it into a data frame row that can be used
+        inside of "model.predict"'''
+    live_df = lib.pd.DataFrame([user_dict])
+    created_test = data_collection.merge_player_stats(live_df)
+    created_test = created_test[test_list]
+    return created_test
+    
 
 
     
