@@ -15,7 +15,8 @@ def collect_game_data(start_date, end_date):
     full = json_normalize(schedule)
     gamepks= full['game_id']
 
-    '''Iterates through play-by-play data, normalizes nested .json, and adds data back to columns defined below.'''
+    '''Iterates through play-by-play data, normalizes nested .json, 
+        and adds data back to columns defined below.'''
     list_for_final_df = []
     for game in gamepks:
         curr_game = statsapi.get('game_playByPlay',{'gamePk':game})
@@ -23,14 +24,18 @@ def collect_game_data(start_date, end_date):
         curr_plays_df = pd.DataFrame(curr_plays)
         curr_plays_norm = json_normalize(curr_plays)
 
-        all_plays_cols = ['about.atBatIndex', 'about.halfInning', 'about.inning', 'count.balls', 'count.strikes', 'matchup.batSide.code', 
-                         'matchup.batter.fullName', 'matchup.batter.id', 'matchup.pitchHand.code', 'matchup.splits.menOnBase',
+        all_plays_cols = ['about.atBatIndex', 'about.halfInning', 'about.inning', 'count.balls', 
+                          'count.strikes', 'matchup.batSide.code', 
+                         'matchup.batter.fullName', 'matchup.batter.id', 'matchup.pitchHand.code', 
+                          'matchup.splits.menOnBase',
                           'matchup.pitcher.fullName',
                          'matchup.pitcher.id', 'result.eventType']
 
-        play_events_cols = ['count.balls', 'count.strikes', 'details.ballColor', 'details.call.code', 'details.call.description',
+        play_events_cols = ['count.balls', 'count.strikes', 'details.ballColor', 
+                            'details.call.code', 'details.call.description',
                             'details.type.description'
-                            ,'details.call.code', 'details.description', 'details.code', 'details.type.code', 'index', 
+                            ,'details.call.code', 'details.description', 'details.code', 
+                            'details.type.code', 'index', 
                             'pitchData.nastyFactor',
                            'pitchData.zone', 'pitchNumber', 'type']
         i = 1
@@ -71,10 +76,15 @@ def define_prior_pitch(dataframe):
     pitch_id_df = each_pitch[['pitch_id', 'details.type.code']].copy()
     merged_df = pd.merge(each_pitch, pitch_id_df,how='left', left_on='prior_pitch', right_on='pitch_id')
     each_pitch_merged = merged_df
-    each_pitch_merged = each_pitch_merged.rename({'pitch_id_y': 'previous_pitch_in_ab', 'details.type.code_y': 
+    each_pitch_merged = each_pitch_merged.rename({'pitch_id_y': 'previous_pitch_in_ab', 
+                                                  'details.type.code_y': 
                                                   'previous_pitch_code'}, axis=1)
-    each_pitch_clean = each_pitch_merged.drop(['result.eventType', 'type', 'pitch_id_x', 
-                                               'previous_pitch_in_ab', 'prior_pitch', 'details.ballColor'], axis=1)
+    
+    each_pitch_clean = each_pitch_merged.drop(['result.eventType', 'type', 
+                                               'pitch_id_x', 
+                                               'previous_pitch_in_ab', 
+                                               'prior_pitch', 
+                                               'details.ballColor'], axis=1)
     return each_pitch_clean
 
 def map_pitches(dataframe):
@@ -95,13 +105,17 @@ def map_pitches(dataframe):
     
     each_pitch_clean['pitch_type'] = each_pitch_clean['details.type.code_x'].map(pitch_dict)
     each_pitch_clean['prior_pitch_type'] = each_pitch_clean['previous_pitch_code'].map(pitch_dict)
-    each_pitch_clean = each_pitch_clean.drop(['details.type.code_x', 'details.type.description', 
-                                              'details.code', 'gamepk', 'index', 'matchup.batter.id'],axis=1)
+    
+    each_pitch_clean = each_pitch_clean.drop(['details.type.code_x', 
+                                              'details.type.description', 
+                                              'details.code', 'gamepk',
+                                              'index', 'matchup.batter.id'],axis=1)
     return each_pitch_clean
 
 def merge_player_stats(dataframe):
     '''Takes player stats from Public Data and merges them by player
         name and creates a new merged data frame with player stats attached.'''
+    
     hitter_df = pd.read_csv('public_data/hitter_data.csv')
     pitcher_df = pd.read_csv('public_data/pitcher_data.csv')
     
@@ -127,8 +141,10 @@ def add_atbat_counts(dataframe):
     add_feats['count.balls'] = add_feats['count.balls'].astype(str)
     add_feats['count.strikes'] = add_feats['count.strikes'].astype(str)
     add_feats['count'] = add_feats['count.balls'] + '-' + add_feats['count.strikes'] 
-    add_feats = add_feats.drop([ 'previous_pitch_code', 'details.call.code',
-                                'count.balls', 'count.strikes'], axis=1)
+    add_feats = add_feats.drop([ 'previous_pitch_code',
+                                'details.call.code',
+                                'count.balls', 
+                                'count.strikes'], axis=1)
     final_pitches = add_feats
     
     return final_pitches
@@ -167,7 +183,7 @@ def get_clean_data(start_date, end_date):
 
 def format_user_input(user_dict):
     '''Uses user input dictionary recieved from Flask App
-        and turns it into a data frame row that can be used
+        and creates a data frame row that can be used
         inside of "model.predict"'''
     live_df = lib.pd.DataFrame([user_dict])
     created_test = data_collection.merge_player_stats(live_df)
