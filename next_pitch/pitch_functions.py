@@ -9,6 +9,14 @@ np.random.seed(0)
 import os
 import seaborn as sns
 
+# Webscraping
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from bs4 import BeautifulSoup
+import re
+import os
+import requests
 
 # DATA MANIPULATION AND MODELLING
 from sklearn.model_selection import train_test_split, cross_val_score
@@ -84,26 +92,31 @@ def run_classifier_models(classifiers, preprocessor, X_train, X_test, y_train, y
 
 
 # Webscrape Function
-def scrape_espn_player_data(url, final_df):
+def scrape_espn_player_data(url):
 
-    """This functions scrapes ESPN leaderboard data and returns a Pandas Data Frame"""
+    '''This functions scrapes ESPN leaderboard data and returns a Pandas Data Frame'''
+    # Populate a dataframe
+    page = requests.get(url)
+    soup = BeautifulSoup(page.text, 'html.parser')
+    header = soup.find('tr', attrs={'class': 'colhead'})
+    columns = [col.get_text() for col in header.find_all('td')]
+    final_df = pd.DataFrame(columns=columns)
 
-    for i in range(1, 1000, 40):
-        url = url.format(i)
+    for i in range(1,1000, 40):
+        url =url.format(i)
         page = requests.get(url)
-        soup = BeautifulSoup(page.text, "html.parser")
+        soup = BeautifulSoup(page.text, 'html.parser')
 
-        players = soup.find_all("tr", attrs={"class": re.compile("row player-10-")})
+        players = soup.find_all('tr', attrs={'class':re.compile('row player-10-')})
         for player in players:
             # Get Stat for each player
-            stats = [stat.get_text() for stat in player.find_all("td")]
+            stats = [stat.get_text() for stat in player.find_all('td')]
             # Create temp dataframe to add later
             temp_df = pd.DataFrame(stats).transpose()
             temp_df.columns = columns
             # Add Data to final_df
             final_df = pd.concat([final_df, temp_df], ignore_index=True)
     return final_df
-
 
 # Final Model, performs train-test split and outputs predicted value on new data.
 

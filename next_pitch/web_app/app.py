@@ -21,8 +21,8 @@ def index():
 def merge_player_stats(dataframe):
     '''Sources data from CSVs located in the main directory. 
     Then it merges the data on the name of the player and returns their stats merged with pitches.'''
-    hitter_df = pd.read_csv('../../public_data/hitter_data.csv')
-    pitcher_df = pd.read_csv('../../public_data/pitcher_data.csv')
+    hitter_df = pd.read_csv('../../public_data/hitter_data_2019.csv')
+    pitcher_df = pd.read_csv('../../public_data/pitcher_data_2019.csv')
     
     hitter_df = hitter_df[['PLAYER', 'SLG', 'OPS', 'WAR']]
     hitter_df = hitter_df.rename(columns={'PLAYER': 'hitter'})
@@ -59,8 +59,8 @@ test_list = ['pitcher',
             'prior_pitch_type',
             'count']
 
-hitters = pd.read_csv('../../public_data/hitter_data.csv')['PLAYER'].tolist()
-pitchers = pd.read_csv('../../public_data/pitcher_data.csv')['PLAYER'].tolist()
+hitters = pd.read_csv('../../public_data/hitter_data_2019.csv')['PLAYER'].tolist()
+pitchers = pd.read_csv('../../public_data/pitcher_data_2019.csv')['PLAYER'].tolist()
 half_inning = ["top", "bottom"]
 innings = [1,2,3,4,5,6,7,8,9]
 hitter_side = ['L', 'R']
