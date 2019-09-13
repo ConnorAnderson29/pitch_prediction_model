@@ -5,9 +5,6 @@ Next Pitch Prediction Model
 *NextPitch* is an interactive web application where users can input their favorite hitters and pitchers and other game variables to recieve a'pitch-type' prediction. 
 ### Try It Here!
 ###### www.nextpitch.online
-
-## Presentation 
-#### https://docs.google.com/presentation/d/1h9lwRWpZt92go0ZzesAV2AyYBTwTaGDAlcaZP1KFOHU/edit?usp=sharing
 ---
 
 ## Business Understanding
