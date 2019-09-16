@@ -59,8 +59,8 @@ test_list = ['pitcher',
             'prior_pitch_type',
             'count']
 
-hitters = pd.read_csv('../../public_data/hitter_data_2019.csv')['PLAYER'].tolist()
-pitchers = pd.read_csv('../../public_data/pitcher_data_2019.csv')['PLAYER'].tolist()
+hitters = pd.read_csv('../../public_data/hitter_data_alpha.csv')['PLAYER'].tolist()
+pitchers = pd.read_csv('../../public_data/pitcher_data_alpha.csv')['PLAYER'].tolist()
 half_inning = ["top", "bottom"]
 innings = [1,2,3,4,5,6,7,8,9]
 hitter_side = ['L', 'R']
